@@ -1,0 +1,30 @@
+---
+import { Sprite } from "astro-icon";
+import { menuItems } from "../../fakeData";
+---
+
+<nav class="menu">
+  <div class="menu__container">
+    <div class="menu__list">
+      {
+        menuItems.map((item) => (
+          <div class="menu-item">
+            <a href="#" class="menu-item__link">
+              <Sprite name={item.icon} />
+              {item.title}
+            </a>
+            <div class="menu-item__container">
+              <div class="menu__list">
+                {item.sub.map((sub) => (
+                  <a href="#" class="menu-item__link">
+                    {sub}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</nav>

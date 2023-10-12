@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $dark-1;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 11rem;
+}
+
+.container {
+  max-width: 114rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint($xl-bp) {
+    max-width: 100%;
+    padding: 0rem 8rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    padding: 0rem 1.5rem;
+  }
+}

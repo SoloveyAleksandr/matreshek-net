@@ -1,0 +1,95 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: visible;
+  background-color: $white;
+  width: 11rem;
+  border-right: 1px solid $light-3;
+
+  &._active {
+    .menu__container {
+      pointer-events: all;
+      background-color: $white;
+      border-color: $light-3;
+
+      .menu-item__link {
+        color: $dark-1;
+      }
+    }
+  }
+
+  &__container {
+    height: 100%;
+    width: 48.8rem;
+    background-color: transparent;
+    transition: 0.3s;
+    pointer-events: none;
+    border-right: 1px solid transparent;
+    position: relative;
+  }
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1.2rem 2rem 1.2rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-item {
+    &._active {
+      .menu-item__container {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &__link {
+      text-align: left;
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      color: transparent;
+      transition: 0.3s;
+      padding: 1.5rem 2rem;
+      border-radius: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 3.3rem;
+      width: 100%;
+      min-height: 7.6rem;
+      transition: 0.5s;
+
+      @include hover {
+        background-color: $light-5;
+      }
+
+      svg {
+        width: 4.5rem;
+        height: 4.5rem;
+        color: $dark-1;
+        opacity: 0.75;
+        flex: none;
+      }
+    }
+
+    &__container {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 48.8rem;
+      height: 100%;
+      border-right: 1px solid $light-3;
+      overflow: auto;
+      transition: 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
