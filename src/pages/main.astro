@@ -6,5 +6,52 @@ import Menu from "../modules/Menu/Menu.astro";
 
 <Layout title="Главная">
   <Menu />
+  <div class="img lazy">
+    <img class="" data-src="./img/test.png" alt="" />
+  </div>
   <Footer />
 </Layout>
+
+<style lang="scss">
+  .lazy {
+    transition: 0.3s;
+
+    &:is(img) {
+      opacity: 0;
+
+      &._ready {
+        opacity: 1;
+      }
+    }
+
+    &:not(img) {
+      position: relative;
+      overflow: hidden;
+      background-color: #f5f7f8;
+
+      &._ready {
+        img {
+          opacity: 1;
+        }
+      }
+
+      img {
+        opacity: 0;
+      }
+    }
+  }
+
+  .img {
+    margin: 5rem auto;
+    width: 100rem;
+    height: 50rem;
+    border-radius: 1rem;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
