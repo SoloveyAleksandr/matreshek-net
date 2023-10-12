@@ -1,0 +1,165 @@
+.footer {
+  margin-top: auto;
+  padding-top: 3.3rem;
+  border-top: 0.1rem solid $light-3;
+
+  &-up {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    background-color: rgba(249, 68, 68, 0.1);
+    position: relative;
+    transition: 0.3s;
+    color: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover {
+      transform: rotate(180deg);
+
+      .footer-up__icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &__ellipse {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &__icon {
+      width: 2.8rem;
+      height: 2.8rem;
+      position: absolute;
+      transition: 0.3s;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 22.2rem;
+    margin-bottom: 3.3rem;
+  }
+
+  &-nav {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+    }
+
+    &__link {
+      font-size: 1.6rem;
+      color: $dark-3;
+      @include defaultHover;
+
+      &.footer-nav__link_main {
+        font-weight: 600;
+        color: $dark-2;
+      }
+    }
+
+    &__phone {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    &-social {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+  }
+
+  &-form {
+    width: 37.3rem;
+    flex: none;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    border: 0.1rem solid $light-3;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.9rem;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+  }
+
+  &-legal {
+    padding: 1.5rem 0;
+    border-top: 0.1rem solid $light-3;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      color: $gray-1;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    &__cards {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+
+      img {
+        width: 100vw;
+        height: 100vw;
+        max-width: 4.6rem;
+        max-height: 3.6rem;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &-copy {
+    padding: 2.75rem 0rem 2.5rem;
+    background-color: $light-2;
+
+    &__text {
+      font-size: 1.6rem;
+      color: $gray-1;
+
+      a {
+        position: relative;
+        color: $gray-2;
+        @include defaultHover;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -0.1rem;
+          width: 100%;
+          border-bottom: 0.1rem solid $gray-2;
+        }
+      }
+    }
+  }
+}

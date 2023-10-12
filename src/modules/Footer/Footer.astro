@@ -1,0 +1,93 @@
+---
+import { Sprite } from "astro-icon";
+import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
+import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
+import SocialLink from "../../components/SocialLink/SocialLink.astro";
+---
+
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer-nav">
+      <div class="footer-nav__item">
+        <a href="#" class="footer-nav__link footer-nav__link_main">О нас</a>
+        <a href="#" class="footer-nav__link">Наша миссия</a>
+        <a href="#" class="footer-nav__link">Контакты</a>
+        <a href="#" class="footer-nav__link">Реквизиты</a>
+      </div>
+      <div class="footer-nav__item">
+        <a href="#" class="footer-nav__link footer-nav__link_main">Подарки</a>
+        <a href="#" class="footer-nav__link">Подбор подарка</a>
+        <a href="#" class="footer-nav__link">Категория 1</a>
+        <a href="#" class="footer-nav__link">Категория 2</a>
+      </div>
+      <div class="footer-nav__item">
+        <a href="#" class="footer-nav__link">Акции</a>
+        <a href="#" class="footer-nav__link">Доставка</a>
+        <a href="#" class="footer-nav__link">Гарантия</a>
+        <a href="#" class="footer-nav__link">Оплата</a>
+        <a href="#" class="footer-nav__link">Возврат</a>
+      </div>
+      <div class="footer-nav__item">
+        <a href="#" class="footer-nav__link footer-nav__link_main">Контакты</a>
+        <div class="footer-nav__phone">
+          <a href="#" class="footer-nav__link footer-nav__link_main"
+            >+7 (999) 854 22 55</a
+          >
+          <a href="#" class="footer-nav__link footer-nav__link_main"
+            >+7 (999) 854 22 55</a
+          >
+        </div>
+        <a href="#" class="footer-nav__link">E-mail: podarki@mail.ru</a>
+        <div class="footer-nav-social">
+          {
+            ["viber", "telegram", "vk", "youtube"].map((i) => (
+              <SocialLink href={"#"} icon={i} />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-form">
+      <h5 class="footer-form__title">Подписаться на наши новости</h5>
+      <DefaultInput clasName="footer-form__input" placeholder="Ваш E-mail" />
+      <DefaultBtn as="button" className="footer-form__btn">
+        Подписаться
+      </DefaultBtn>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <div class="container footer-legal__container">
+      <p class="footer-legal__text">© 2008–2023 Все права защищены.</p>
+      <div class="footer-legal__inner">
+        <div class="footer-legal__cards">
+          <img src="./img/visa.png" alt="" />
+          <img src="./img/mastercard.png" alt="" />
+          <img src="./img/mir.png" alt="" />
+        </div>
+        <button type="button" class="footer-up">
+          <svg
+            class="footer-up__ellipse"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 50 37"
+            fill="none"
+          >
+            <path
+              d="M49 12.0001C49 15.6074 48.1868 19.1683 46.621 22.418C45.0551 25.6678 42.7768 28.5227 39.9555 30.7706C37.1342 33.0185 33.8425 34.6015 30.3251 35.4019C26.8077 36.2023 23.1551 36.1994 19.6389 35.3936C16.1227 34.5878 12.8335 32.9998 10.0156 30.7476C7.19777 28.4953 4.92388 25.6369 3.36302 22.3847C1.80216 19.1326 0.994473 15.5704 1.00003 11.9631C1.00558 8.35581 1.82423 4.79615 3.39511 1.54883"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"></path>
+          </svg>
+          <Sprite class="footer-up__icon" name="fluent:chevron-up-48-regular" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <div class="container">
+      <p class="footer-copy__text">
+        Сайт разработан агентством <a href="#">Вайд Арт</a>
+      </p>
+    </div>
+  </div>
+</footer>

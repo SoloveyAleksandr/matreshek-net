@@ -1,0 +1,15 @@
+.default-btn {
+  height: 5.2rem;
+  padding: 1rem 2.8rem;
+  border: 0.2rem solid $accent;
+  border-radius: 0.8rem;
+  background: $accent;
+  transition: 0.3s;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,20 @@
+.default-input {
+  border-radius: 0.8rem;
+  border: 0.2rem solid $light-4;
+  font-size: 1.6rem;
+  height: 5.2rem;
+  padding: 0rem 1.8rem;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: $light-6;
+  }
+
+  &:focus {
+    border-color: $gray-2;
+  }
+
+  &::placeholder {
+    color: $gray-1;
+  }
+}

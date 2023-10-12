@@ -1,0 +1,10 @@
+---
+interface Props {
+  as?: keyof astroHTML.JSX.IntrinsicElements;
+  className?: string;
+}
+
+const { as: Wrapper = "input", className, ...rest } = Astro.props;
+---
+
+<Wrapper {...rest} class:list={["default-input", className]} />

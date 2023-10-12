@@ -12,6 +12,7 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -27,16 +28,6 @@ body {
 }
 
 .container {
-  max-width: 114rem;
+  padding: 0rem 3.2rem;
   width: 100%;
-  margin: 0 auto;
-
-  @include breakpoint($xl-bp) {
-    max-width: 100%;
-    padding: 0rem 8rem;
-  }
-
-  @include breakpoint($xs-bp) {
-    padding: 0rem 1.5rem;
-  }
 }
