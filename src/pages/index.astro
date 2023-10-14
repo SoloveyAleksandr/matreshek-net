@@ -1,4 +1,5 @@
 ---
+import DefaultBtn from "../components/DefaultBtn/DefaultBtn.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -6,6 +7,6 @@ import Layout from "../layouts/Layout.astro";
   <div
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 5rem; padding: 5rem;"
   >
-    <a href="./main.html">Main</a>
+    <DefaultBtn as="a" href="./main.html">Главная</DefaultBtn>
   </div>
 </Layout>

@@ -8,8 +8,16 @@
   font-size: 1.6rem;
   font-weight: 500;
   color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     opacity: 0.9;
+  }
+
+  &.sm {
+    height: 4.8rem;
+    padding: 1rem 3.2rem;
   }
 }
