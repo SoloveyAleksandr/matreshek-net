@@ -2,21 +2,37 @@ class MenuController {
   container: HTMLElement;
   items: NodeListOf<HTMLElement>;
   isActive: boolean;
+  bg: HTMLElement;
 
-  constructor(container: HTMLElement, items: NodeListOf<HTMLElement>) {
+  constructor(
+    container: HTMLElement,
+    bg: HTMLElement,
+    items: NodeListOf<HTMLElement>,
+  ) {
     this.container = container;
+    this.bg = bg;
     this.items = items;
     this.isActive = false;
 
     if (this.container) {
-      this.container.addEventListener("mouseenter", this.openMenu.bind(this));
-      this.container.addEventListener("mouseleave", this.closeMenu.bind(this));
+      this.container.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.openMenu.call(this);
+      });
+      // this.container.addEventListener("mouseleave", this.closeMenu.bind(this));
+      this.bg.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.closeMenu.call(this);
+      });
 
       items.forEach((i) => {
         const link = i.querySelector<HTMLElement>(".menu-item__link");
 
         if (link) {
-          link.addEventListener("mouseenter", this.openItem.bind(this, i));
+          link.addEventListener("click", (e) => {
+            e.stopPropagation();
+            this.openItem.call(this, i);
+          });
         }
       });
     }
@@ -53,6 +69,9 @@ class MenuController {
 
 const menu =
   document.querySelector<HTMLElement>(".menu") || document.createElement("div");
+const menuBG =
+  document.querySelector<HTMLElement>(".menu__bg") ||
+  document.createElement("div");
 const menuItems = document.querySelectorAll<HTMLElement>(".menu-item");
 
-export const menuController = new MenuController(menu, menuItems);
+export const menuController = new MenuController(menu, menuBG, menuItems);

@@ -92,7 +92,12 @@
   }
 
   &__catalog {
+    margin-right: 1.3rem;
     display: none;
+
+    @include breakpoint($xm-bp) {
+      display: flex;
+    }
   }
 
   &-search {

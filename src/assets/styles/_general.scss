@@ -25,6 +25,10 @@ body {
   flex-direction: column;
   position: relative;
   padding-left: 11rem;
+
+  @include breakpoint($xm-bp) {
+    padding-left: 0;
+  }
 }
 
 .container {

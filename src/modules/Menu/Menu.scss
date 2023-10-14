@@ -8,8 +8,25 @@
   background-color: $white;
   width: 11rem;
   border-right: 1px solid $light-3;
+  transition: 0.3s;
+
+  @include breakpoint($xm-bp) {
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+  }
 
   &._active {
+    @include breakpoint($xm-bp) {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    .menu__bg {
+      opacity: 0.5;
+      pointer-events: all;
+    }
+
     .menu__container {
       pointer-events: all;
       background-color: $white;
@@ -19,6 +36,22 @@
         color: $dark-1;
       }
     }
+
+    .menu__list {
+      overflow: auto;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100%;
+    background-color: #111827;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
   }
 
   &__container {
@@ -39,10 +72,14 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    overflow: hidden;
   }
 
   &-item {
     &._active {
+      .menu-item__btn {
+        background-color: $light-5;
+      }
       .menu-item__container {
         opacity: 1;
         pointer-events: all;

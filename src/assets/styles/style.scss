@@ -12,13 +12,13 @@ html {
     font-size: calc(100vw / 1920 * 10);
   }
 
-  // @include breakpoint($xm-bp) {
-  //   font-size: calc(100vw / 1024 * 10);
-  // }
+  @include breakpoint($xm-bp) {
+    font-size: calc(100vw / 1200 * 10);
+  }
 
-  // @include breakpoint($xs-bp) {
-  //   font-size: calc(100vw / 375 * 10);
-  // }
+  @include breakpoint($xs-bp) {
+    font-size: calc(100vw / 375 * 10);
+  }
 }
 
 @import "./general";

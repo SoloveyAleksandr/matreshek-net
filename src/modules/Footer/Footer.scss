@@ -44,6 +44,10 @@
     justify-content: space-between;
     gap: 22.2rem;
     margin-bottom: 3.3rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 3rem;
+    }
   }
 
   &-nav {
