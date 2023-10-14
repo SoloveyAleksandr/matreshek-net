@@ -1,7 +1,8 @@
+import "swiper/css/bundle";
 import { menuController } from "../../modules/Menu/Menu";
-import { lazyLoad } from "./utils";
+import { mainBannerScript } from "../../modules/MainBanner/MainBanner";
 
-lazyLoad();
+mainBannerScript();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

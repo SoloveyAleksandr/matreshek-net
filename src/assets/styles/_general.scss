@@ -35,3 +35,22 @@ body {
   padding: 0rem 3.2rem;
   width: 100%;
 }
+
+.swiper-pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  &__bullet {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    &._active {
+      background-color: $gray-3;
+    }
+  }
+}
