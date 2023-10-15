@@ -30,8 +30,8 @@ export const mainBannerScript = () => {
         el: pagination,
         type: "bullets",
         clickable: true,
-        // bulletActiveClass: "_active",
-        // bulletClass: "swiper-pagination__bullet",
+        bulletActiveClass: "_active",
+        bulletClass: "swiper-pagination__bullet",
       },
       on: {
         slideChange: (swiper) => {

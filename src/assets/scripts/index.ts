@@ -8,15 +8,17 @@ import {
   EffectCreative,
   Autoplay,
 } from "swiper/modules";
+import { initProductItems } from "../../components/ProductItem/ProductItem";
+import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
 
 Swiper.use([Navigation, Pagination, EffectCreative, Autoplay]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
-Swiper.defaults.pagination = {
-  bulletActiveClass: "_active",
-  bulletClass: "swiper-pagination__bullet",
-};
 
 mainBannerScript();
+
+initProductSliders();
+
+initProductItems();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

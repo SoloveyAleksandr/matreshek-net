@@ -16,7 +16,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: $dark-1;
+  color: $dark-2;
 }
 
 .page {
@@ -49,6 +49,8 @@ body {
       height: 0.6rem;
       border-radius: 50%;
       transition: 0.3s;
+      background-color: $gray-1;
+      cursor: pointer;
 
       &._active {
         background-color: $gray-3;
@@ -63,5 +65,45 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &-btns {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      padding: 0.7rem;
+      color: $gray-1;
+      background-color: $white;
+      border-radius: 0.6rem;
+      transition: 0.3s;
+      @include hover {
+        background-color: $accent_hover;
+        color: $accent;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

@@ -1,9 +1,80 @@
 ---
+import type { IProducItem } from "../assets/scripts/interfaces";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../modules/Footer/Footer.astro";
 import Header from "../modules/Header/Header.astro";
 import MainBanner from "../modules/MainBanner/MainBanner.astro";
 import Menu from "../modules/Menu/Menu.astro";
+import ProductSlider from "../modules/ProductSlider/ProductSlider.astro";
+
+const products_1: IProducItem[] = [
+  {
+    images: [
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+    ],
+    price: "1 350 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: "Походно-туристический набор столовых приборов",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-3.png",
+      "./img/prod/prod-3.png",
+      "./img/prod/prod-3.png",
+    ],
+    price: "385 ₽",
+    lastPrice: "400 ₽",
+    discount: "-15%",
+    name: "Спящая собака ангел / Бижу брелок для ключей",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-4.png",
+      "./img/prod/prod-4.png",
+      "./img/prod/prod-4.png",
+    ],
+    price: "385 ₽",
+    lastPrice: "420 ₽",
+    discount: "-15%",
+    name: "Спящая собака ангел / Бижу брелок для ключей",
+    stars: 4,
+    rating: "4,1",
+  },
+  {
+    images: [
+      "./img/prod/prod-5.png",
+      "./img/prod/prod-5.png",
+      "./img/prod/prod-5.png",
+    ],
+    price: "769 ₽",
+    lastPrice: "1 000 ₽",
+    discount: "-10%",
+    name: "Бижу брелок - Garten of banban Сад Банбана",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-6.png",
+      "./img/prod/prod-6.png",
+      "./img/prod/prod-6.png",
+    ],
+    price: "49 700 ₽",
+    lastPrice: "99 400 ₽",
+    discount: "-50%",
+    name: "Георгий Победоносец: золотая монета 50 рублей / 7.78 гр золото ",
+    stars: 3,
+    rating: "",
+  },
+];
+const products_2: IProducItem[] = [];
 ---
 
 <Layout title="Главная">
@@ -11,6 +82,11 @@ import Menu from "../modules/Menu/Menu.astro";
   <Menu />
 
   <MainBanner />
+
+  <ProductSlider
+    title="Хиты со скидкой"
+    items={[...products_1, ...products_1]}
+  />
 
   <Footer />
 </Layout>

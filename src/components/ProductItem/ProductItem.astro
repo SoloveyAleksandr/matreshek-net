@@ -1,0 +1,61 @@
+---
+import { Sprite } from "astro-icon";
+import type { IProducItem } from "../../assets/scripts/interfaces";
+import DefaultBtn from "../DefaultBtn/DefaultBtn.astro";
+
+interface Props {
+  item: IProducItem;
+  className?: string;
+}
+
+const { item, className } = Astro.props;
+---
+
+<div class:list={["product-item", className]}>
+  <div class="swiper product-item__images">
+    <div class="swiper-wrapper">
+      {
+        item.images.map((img) => (
+          <div class="swiper-slide">
+            <img src={img} alt="" loading="lazy" />
+            <div class="swiper-preloader">
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="product-item__container">
+    <div class="product-item-price">
+      <span class="product-item-price__current">{item.price}</span>
+      <span class="product-item-price__discount">{item.discount}</span>
+      <span class="product-item-price__last">{item.lastPrice}</span>
+    </div>
+    <h4 class="product-item__name" title={item.name}>{item.name}</h4>
+    <div class="product-item-rating">
+      <div class="product-item-rating__stars">
+        {
+          [...new Array(5)].map((s, i) => (
+            <button
+              type="button"
+              class:list={[
+                "product-item-rating__star",
+                i < item.stars ? "current" : "",
+              ]}
+            >
+              <Sprite name="star" />
+            </button>
+          ))
+        }
+      </div>
+      <span class="product-item-rating__value">{item.rating}</span>
+    </div>
+    <div class="product-item-btns">
+      <DefaultBtn className="product-item-btns__cart" size="sm">
+        В корзину
+      </DefaultBtn>
+    </div>
+  </div>
+</div>
