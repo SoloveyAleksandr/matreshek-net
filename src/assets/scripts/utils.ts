@@ -50,8 +50,8 @@ export class Dropdown {
 
     document.addEventListener("click", (e) => {
       const target = e.target;
-      if ((target as Element)?.closest(".dropdown") as HTMLElement) {
-      } else {
+      const closest = (target as Element)?.closest(".dropdown") as HTMLElement;
+      if (closest !== this.container) {
         this.close();
       }
     });

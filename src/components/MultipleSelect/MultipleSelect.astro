@@ -27,7 +27,13 @@ const { placeholder, defaultValue, items } = Astro.props;
   <div class="dropdown__container">
     <div class="dropdown__inner">
       <div class="dropdown__list">
-        {items.map((i) => <Checkbox value={i.value}>{i.name}</Checkbox>)}
+        {
+          items.map((i) => (
+            <Checkbox value={i.value} title={i.name}>
+              {i.name}
+            </Checkbox>
+          ))
+        }
       </div>
     </div>
   </div>
