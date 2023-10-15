@@ -2,6 +2,7 @@
 import { Sprite } from "astro-icon";
 import type { IProducItem } from "../../assets/scripts/interfaces";
 import DefaultBtn from "../DefaultBtn/DefaultBtn.astro";
+import IconBtn from "../IconBtn/IconBtn.astro";
 
 interface Props {
   item: IProducItem;
@@ -56,6 +57,7 @@ const { item, className } = Astro.props;
       <DefaultBtn className="product-item-btns__cart" size="sm">
         В корзину
       </DefaultBtn>
+      <IconBtn size="sm" />
     </div>
   </div>
 </div>

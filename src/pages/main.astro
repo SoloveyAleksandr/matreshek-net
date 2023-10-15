@@ -74,7 +74,63 @@ const products_1: IProducItem[] = [
     rating: "",
   },
 ];
-const products_2: IProducItem[] = [];
+const products_2: IProducItem[] = [
+  {
+    images: [
+      "./img/prod/prod-7.png",
+      "./img/prod/prod-7.png",
+      "./img/prod/prod-7.png",
+    ],
+    price: "1 350 ₽",
+    name: "Походно-туристический набор столовых приборов",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-8.png",
+      "./img/prod/prod-8.png",
+      "./img/prod/prod-8.png",
+    ],
+    price: "385 ₽",
+    name: "Спящая собака ангел / Бижу брелок для ключей",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-9.png",
+      "./img/prod/prod-9.png",
+      "./img/prod/prod-9.png",
+    ],
+    price: "385 ₽",
+    name: "Спящая собака ангел / Бижу брелок для ключей",
+    stars: 4,
+    rating: "4,1",
+  },
+  {
+    images: [
+      "./img/prod/prod-10.png",
+      "./img/prod/prod-10.png",
+      "./img/prod/prod-10.png",
+    ],
+    price: "769 ₽",
+    name: "Бижу брелок - Garten of banban Сад Банбана",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-11.png",
+      "./img/prod/prod-11.png",
+      "./img/prod/prod-11.png",
+    ],
+    price: "49 700 ₽",
+    name: "Георгий Победоносец: золотая монета 50 рублей / 7.78 гр золото ",
+    stars: 3,
+    rating: "",
+  },
+];
 ---
 
 <Layout title="Главная">
@@ -86,6 +142,11 @@ const products_2: IProducItem[] = [];
   <ProductSlider
     title="Хиты со скидкой"
     items={[...products_1, ...products_1]}
+  />
+
+  <ProductSlider
+    title="Подбор подарка"
+    items={[...products_2, ...products_2]}
   />
 
   <Footer />
