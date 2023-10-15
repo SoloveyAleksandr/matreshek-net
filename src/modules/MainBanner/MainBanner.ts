@@ -1,10 +1,4 @@
 import Swiper from "swiper";
-import {
-  Navigation,
-  Pagination,
-  EffectCreative,
-  Autoplay,
-} from "swiper/modules";
 
 export const mainBannerScript = () => {
   const mainSwiperContainer = document.querySelector<HTMLElement>(
@@ -36,10 +30,9 @@ export const mainBannerScript = () => {
         el: pagination,
         type: "bullets",
         clickable: true,
-        bulletActiveClass: "_active",
-        bulletClass: "swiper-pagination__bullet",
+        // bulletActiveClass: "_active",
+        // bulletClass: "swiper-pagination__bullet",
       },
-      modules: [Navigation, Pagination, EffectCreative, Autoplay],
       on: {
         slideChange: (swiper) => {
           prodSwiper.slideTo(swiper.activeIndex);
