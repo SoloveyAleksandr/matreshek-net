@@ -7,4 +7,4 @@ interface Props {
 const { as: Wrapper = "input", className, ...rest } = Astro.props;
 ---
 
-<Wrapper {...rest} class:list={["default-input", className]} />
+<Wrapper type="text" {...rest} class:list={["default-input", className]} />

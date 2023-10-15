@@ -1,6 +1,7 @@
 ---
 import type { IProducItem } from "../assets/scripts/interfaces";
 import MultipleSelect from "../components/MultipleSelect/MultipleSelect.astro";
+import RangeSlider from "../components/RangeSlider/RangeSlider.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../modules/Footer/Footer.astro";
 import Header from "../modules/Header/Header.astro";
@@ -171,6 +172,7 @@ const products_2: IProducItem[] = [
           { name: "Молодому человеку", value: "7" },
         ]}
       />
+      <RangeSlider placeholder="Стоимость" />
     </form>
   </ProductSlider>
 

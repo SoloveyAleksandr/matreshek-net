@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "astro": "^3.0.13",
+    "dual-range-bar": "^1.0.3",
     "swiper": "^10.3.1"
   },
   "devDependencies": {

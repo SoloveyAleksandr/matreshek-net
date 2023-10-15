@@ -51,6 +51,14 @@
     }
   }
 
+  &__list {
+    width: 100%;
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 0rem;
+  }
+
   .checkbox {
     padding: 1.2rem 2rem;
 

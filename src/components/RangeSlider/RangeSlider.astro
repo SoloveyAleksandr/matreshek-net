@@ -1,19 +1,15 @@
 ---
 import { Sprite } from "astro-icon";
-import Checkbox from "../Checkbox/Checkbox.astro";
+import DefaultInput from "../DefaultInput/DefaultInput.astro";
 
 interface Props {
   placeholder: string;
-  items: {
-    name: string;
-    value: string;
-  }[];
 }
 
-const { placeholder, items } = Astro.props;
+const { placeholder } = Astro.props;
 ---
 
-<div class="dropdown multiple-select" data-multiple-select>
+<div class="dropdown multiple-select range-slider" data-range-slider>
   <div class="multiple-select__btns">
     <button type="button" class="dropdown-btn">
       <span class="dropdown-btn__text">{placeholder}</span>
@@ -25,14 +21,12 @@ const { placeholder, items } = Astro.props;
   </div>
   <div class="dropdown__container">
     <div class="dropdown__inner">
-      <div class="multiple-select__list">
-        {
-          items.map((i) => (
-            <Checkbox value={i.value} title={i.name}>
-              {i.name}
-            </Checkbox>
-          ))
-        }
+      <div class="range-slider__container">
+        <div class="range-slider__inputs">
+          <DefaultInput data-min="100" data-init="200" type="number" />
+          <DefaultInput data-max="3000" data-init="1000" type="number" />
+        </div>
+        <div class="range-slider__range"></div>
       </div>
     </div>
   </div>

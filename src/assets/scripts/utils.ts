@@ -1,3 +1,5 @@
+import { DualHRangeBar } from "dual-range-bar";
+
 export class ProducItemStarsController {
   starsList: NodeListOf<HTMLElement>;
 
@@ -133,5 +135,145 @@ export class MultipleSelect extends Dropdown {
     this.btnText && (this.btnText.textContent = this.text);
     this.container.classList.remove("_checked");
     this.close();
+  }
+}
+
+export class RangeSlider extends Dropdown {
+  range: DualHRangeBar | null;
+  minInput: HTMLInputElement | null;
+  maxInput: HTMLInputElement | null;
+  minInit: number;
+  maxInit: number;
+  cleanBtn: HTMLButtonElement | null;
+  minValue: number;
+  maxValue: number;
+
+  constructor(container: HTMLElement) {
+    super(container);
+    this.cleanBtn = this.container.querySelector<HTMLButtonElement>(
+      ".multiple-select__clean",
+    );
+    this.range = null;
+    this.minInput =
+      this.container.querySelector<HTMLInputElement>("[data-min]");
+    this.maxInput =
+      this.container.querySelector<HTMLInputElement>("[data-max]");
+
+    this.minValue = Number(this.minInput?.dataset.min) || 0;
+    this.minInit = Number(this.minInput?.dataset.init) || this.minValue;
+    this.maxValue = Number(this.maxInput?.dataset.max) || 100;
+    this.maxInit = Number(this.maxInput?.dataset.init) || this.maxValue;
+
+    if (this.minInput && this.maxInput) {
+      this.minInput.addEventListener(
+        "blur",
+        this.inputValue.bind(this, this.minInput),
+      );
+      this.maxInput.addEventListener(
+        "blur",
+        this.inputValue.bind(this, this.maxInput),
+      );
+    }
+
+    const rangeContainer = this.container.querySelector<HTMLDivElement>(
+      ".range-slider__range",
+    );
+
+    if (rangeContainer) {
+      this.range = new DualHRangeBar(rangeContainer, {
+        lowerBound: this.minValue,
+        upperBound: this.maxValue,
+        lower: this.minInit,
+        upper: this.maxInit,
+        minSpan: 0,
+        maxSpan: this.maxValue - this.minValue,
+      });
+      this.range.addEventListener("update", this.updateValue.bind(this));
+      this.setDefaultRange();
+    }
+
+    if (this.cleanBtn) {
+      this.cleanBtn.addEventListener("click", this.setDefaultRange.bind(this));
+    }
+  }
+
+  updateValue() {
+    if (this.range && this.minInput && this.maxInput) {
+      this.minInput.value = Math.round(this.range.lower).toString();
+      this.maxInput.value = Math.round(this.range.upper).toString();
+      this.container.classList.add("_checked");
+    }
+  }
+
+  setDefaultRange() {
+    this.container.classList.remove("_checked");
+    if (this.range && this.minInput && this.maxInput) {
+      this.minInput.value = Math.round(this.minInit).toString();
+      this.maxInput.value = Math.round(this.maxInit).toString();
+    }
+    this.updateRange();
+  }
+
+  updateRange() {
+    if (this.range && this.minInput && this.maxInput) {
+      if (Number(this.minInput.value) >= this.minValue) {
+        this.range.lower = Number(this.minInput.value);
+      } else {
+        this.range.lower = this.minInit;
+      }
+      if (Number(this.maxInput.value) >= this.maxValue) {
+        this.range.upper = Number(this.maxInput.value);
+      } else {
+        this.range.upper = this.maxInit;
+      }
+    }
+  }
+
+  inputValue(target: HTMLInputElement) {
+    const value = Math.round(Number(target.value));
+
+    if (this.range) {
+      if (target === this.minInput) {
+        if (value >= this.minValue) {
+          if (value <= this.range.upper) {
+            this.range.lower = value;
+          } else {
+            if (value <= this.maxValue) {
+              this.range.lower = this.range.upper;
+              this.range.upper = value;
+            } else {
+              this.range.lower = this.range.upper;
+              this.range.upper = this.maxValue;
+            }
+            this.minInput.value = this.range.lower.toString();
+            this.maxInput &&
+              (this.maxInput.value = this.range.upper.toString());
+          }
+        } else {
+          this.range.lower = this.minValue;
+          this.minInput.value = this.minValue.toString();
+        }
+      } else if (target === this.maxInput) {
+        if (value <= this.maxValue) {
+          if (value >= this.range.lower) {
+            this.range.upper = value;
+          } else {
+            if (value >= this.minValue) {
+              this.range.upper = this.range.lower;
+              this.range.lower = value;
+            } else {
+              this.range.upper = this.range.lower;
+              this.range.lower = this.minValue;
+            }
+            this.maxInput.value = this.range.upper.toString();
+            this.minInput &&
+              (this.minInput.value = this.range.lower.toString());
+          }
+        } else {
+          this.range.upper = this.maxValue;
+          this.maxInput.value = this.maxValue.toString();
+        }
+      }
+    }
   }
 }
