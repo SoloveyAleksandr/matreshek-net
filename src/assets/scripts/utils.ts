@@ -212,6 +212,7 @@ export class RangeSlider extends Dropdown {
       this.maxInput.value = Math.round(this.maxInit).toString();
     }
     this.updateRange();
+    this.close();
   }
 
   updateRange() {
