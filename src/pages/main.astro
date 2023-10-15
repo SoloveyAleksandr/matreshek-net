@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../modules/Footer/Footer.astro";
 import Header from "../modules/Header/Header.astro";
 import MainBanner from "../modules/MainBanner/MainBanner.astro";
+import MainInfo from "../modules/MainInfo/MainInfo.astro";
 import Menu from "../modules/Menu/Menu.astro";
 import ProductSlider from "../modules/ProductSlider/ProductSlider.astro";
 
@@ -175,6 +176,8 @@ const products_2: IProducItem[] = [
       <RangeSlider placeholder="Стоимость" />
     </form>
   </ProductSlider>
+
+  <MainInfo />
 
   <Footer />
 </Layout>
