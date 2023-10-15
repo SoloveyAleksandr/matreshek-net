@@ -19,10 +19,10 @@ export const mainBannerScript = () => {
       effect: "creative",
       creativeEffect: {
         prev: {
-          translate: ["-20%", 0, 0],
+          translate: ["-20%", 0, -100],
         },
         next: {
-          translate: ["100%", 0, 1],
+          translate: ["100%", 0, 0],
         },
       },
       speed: 1000,
