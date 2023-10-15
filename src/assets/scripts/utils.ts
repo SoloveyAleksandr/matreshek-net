@@ -104,6 +104,8 @@ export class MultipleSelect extends Dropdown {
       this.inputList.forEach((input) => {
         input.addEventListener("change", this.selectHandler.bind(this));
       });
+
+      this.selectHandler();
     }
   }
 
