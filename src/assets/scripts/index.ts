@@ -10,6 +10,7 @@ import {
 } from "swiper/modules";
 import { initProductItems } from "../../components/ProductItem/ProductItem";
 import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
+import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSelect";
 
 Swiper.use([Navigation, Pagination, EffectCreative, Autoplay]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
@@ -19,6 +20,8 @@ mainBannerScript();
 initProductSliders();
 
 initProductItems();
+
+initMultipleSelects();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

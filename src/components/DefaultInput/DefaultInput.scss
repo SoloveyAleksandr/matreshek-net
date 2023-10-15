@@ -5,8 +5,7 @@
   height: 5.2rem;
   padding: 0rem 1.8rem;
   transition: 0.3s;
-
-  &:hover {
+  @include hover {
     border-color: $light-6;
   }
 

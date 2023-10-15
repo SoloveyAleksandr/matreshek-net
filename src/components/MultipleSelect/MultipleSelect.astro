@@ -1,0 +1,34 @@
+---
+import { Sprite } from "astro-icon";
+import Checkbox from "../Checkbox/Checkbox.astro";
+
+interface Props {
+  placeholder: string;
+  defaultValue?: string;
+  items: {
+    name: string;
+    value: string;
+  }[];
+}
+
+const { placeholder, defaultValue, items } = Astro.props;
+---
+
+<div class="dropdown multiple-select" data-default-value={defaultValue}>
+  <div class="multiple-select__btns">
+    <button type="button" class="dropdown-btn">
+      <span class="dropdown-btn__text">{placeholder}</span>
+      <Sprite name="fi_chevron-down" />
+    </button>
+    <button type="button" class="multiple-select__clean">
+      <Sprite name="fi_x" />
+    </button>
+  </div>
+  <div class="dropdown__container">
+    <div class="dropdown__inner">
+      <div class="dropdown__list">
+        {items.map((i) => <Checkbox value={i.value}>{i.name}</Checkbox>)}
+      </div>
+    </div>
+  </div>
+</div>

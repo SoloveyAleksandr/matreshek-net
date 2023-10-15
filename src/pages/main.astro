@@ -1,5 +1,6 @@
 ---
 import type { IProducItem } from "../assets/scripts/interfaces";
+import MultipleSelect from "../components/MultipleSelect/MultipleSelect.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../modules/Footer/Footer.astro";
 import Header from "../modules/Header/Header.astro";
@@ -70,8 +71,8 @@ const products_1: IProducItem[] = [
     lastPrice: "99 400 ₽",
     discount: "-50%",
     name: "Георгий Победоносец: золотая монета 50 рублей / 7.78 гр золото ",
-    stars: 3,
-    rating: "",
+    stars: 5,
+    rating: "5",
   },
 ];
 const products_2: IProducItem[] = [
@@ -81,8 +82,8 @@ const products_2: IProducItem[] = [
       "./img/prod/prod-7.png",
       "./img/prod/prod-7.png",
     ],
-    price: "1 350 ₽",
-    name: "Походно-туристический набор столовых приборов",
+    price: "1 207 ₽",
+    name: "Пепельница для курения, коллекционная ",
     stars: 3,
     rating: "3,7",
   },
@@ -92,8 +93,8 @@ const products_2: IProducItem[] = [
       "./img/prod/prod-8.png",
       "./img/prod/prod-8.png",
     ],
-    price: "385 ₽",
-    name: "Спящая собака ангел / Бижу брелок для ключей",
+    price: "5 120 ₽",
+    name: "WS-1105 Статуэтка Гиппократ (Veronese)",
     stars: 3,
     rating: "3,7",
   },
@@ -103,10 +104,10 @@ const products_2: IProducItem[] = [
       "./img/prod/prod-9.png",
       "./img/prod/prod-9.png",
     ],
-    price: "385 ₽",
-    name: "Спящая собака ангел / Бижу брелок для ключей",
+    price: "5 350 ₽",
+    name: "Статуэтка Veronese 'Фемида-богиня правосудия'",
     stars: 4,
-    rating: "4,1",
+    rating: "4,7",
   },
   {
     images: [
@@ -114,21 +115,21 @@ const products_2: IProducItem[] = [
       "./img/prod/prod-10.png",
       "./img/prod/prod-10.png",
     ],
-    price: "769 ₽",
-    name: "Бижу брелок - Garten of banban Сад Банбана",
+    price: "550 ₽",
+    name: "Реалистичная подушка-антистресс Ежик",
+    stars: 5,
+    rating: "5",
+  },
+  {
+    images: [
+      "./img/prod/prod-11.png",
+      "./img/prod/prod-11.png",
+      "./img/prod/prod-11.png",
+    ],
+    price: "450 ₽ ",
+    name: "Игрушка антистресс электронный поп ит",
     stars: 3,
     rating: "3,7",
-  },
-  {
-    images: [
-      "./img/prod/prod-11.png",
-      "./img/prod/prod-11.png",
-      "./img/prod/prod-11.png",
-    ],
-    price: "49 700 ₽",
-    name: "Георгий Победоносец: золотая монета 50 рублей / 7.78 гр золото ",
-    stars: 3,
-    rating: "",
   },
 ];
 ---
@@ -144,10 +145,22 @@ const products_2: IProducItem[] = [
     items={[...products_1, ...products_1]}
   />
 
-  <ProductSlider
-    title="Подбор подарка"
-    items={[...products_2, ...products_2]}
-  />
+  <ProductSlider title="Подбор подарка" items={[...products_2, ...products_2]}>
+    <form action="#" class="product-slider__filter" slot="filter">
+      <MultipleSelect
+        placeholder="Кому"
+        items={[
+          { name: "Молодому человеку asdasf dafasd fdsaf ", value: "1" },
+          { name: "Молодому человеку", value: "2" },
+          { name: "Молодому человеку", value: "3" },
+          { name: "Молодому человеку", value: "4" },
+          { name: "Молодому человеку", value: "5" },
+          { name: "Молодому человеку", value: "6" },
+          { name: "Молодому человеку", value: "7" },
+        ]}
+      />
+    </form>
+  </ProductSlider>
 
   <Footer />
 </Layout>
