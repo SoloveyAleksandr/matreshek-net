@@ -1,16 +1,68 @@
 ---
-import type { IProducItem } from "../assets/scripts/interfaces";
-import MultipleSelect from "../components/MultipleSelect/MultipleSelect.astro";
-import RangeSlider from "../components/RangeSlider/RangeSlider.astro";
-import Layout from "../layouts/Layout.astro";
-import Footer from "../modules/Footer/Footer.astro";
-import Header from "../modules/Header/Header.astro";
-import MainBanner from "../modules/MainBanner/MainBanner.astro";
-import MainInfo from "../modules/MainInfo/MainInfo.astro";
-import Menu from "../modules/Menu/Menu.astro";
-import ProductSlider from "../modules/ProductSlider/ProductSlider.astro";
+import type { IProducItem } from "../../assets/scripts/interfaces";
+import MultipleSelect from "../../components/MultipleSelect/MultipleSelect.astro";
+import ProductItem from "../../components/ProductItem/ProductItem.astro";
+import RangeSlider from "../../components/RangeSlider/RangeSlider.astro";
+import Pagination from "../Pagination/Pagination.astro";
 
-const products_1: IProducItem[] = [
+const items: IProducItem[] = [
+  {
+    images: [
+      "./img/prod/prod-12.png",
+      "./img/prod/prod-12.png",
+      "./img/prod/prod-12.png",
+    ],
+    price: "7 350 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: "Массажер для рук Youpin PMA Graphene",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-13.png",
+      "./img/prod/prod-13.png",
+      "./img/prod/prod-13.png",
+    ],
+    price: "2 350 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: "Вибромассажер ручной CS Medica CS-v1 белый",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-14.png",
+      "./img/prod/prod-14.png",
+      "./img/prod/prod-14.png",
+    ],
+    price: "5 350 ₽",
+    lastPrice: "6 350 ₽",
+    discount: "-50%",
+    name: "Массажер для рук с инфракрасным прогревом",
+    stars: 3,
+    rating: "3,7",
+    slidesPreview: [
+      "./img/prod/prod-14.png",
+      "./img/prod/prod-14.png",
+      "./img/prod/prod-14.png",
+    ],
+  },
+  {
+    images: [
+      "./img/prod/prod-15.png",
+      "./img/prod/prod-15.png",
+      "./img/prod/prod-15.png",
+    ],
+    price: "450 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: 'Мягкая игрушка антистресс "Голубь сизый" Подарок',
+    stars: 3,
+    rating: "3,7",
+  },
   {
     images: [
       "./img/prod/prod-2.png",
@@ -76,8 +128,63 @@ const products_1: IProducItem[] = [
     stars: 5,
     rating: "5",
   },
-];
-const products_2: IProducItem[] = [
+  {
+    images: [
+      "./img/prod/prod-16.png",
+      "./img/prod/prod-16.png",
+      "./img/prod/prod-16.png",
+    ],
+    price: "2 350 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: "Хохломская Роспись Цветы / Мужская",
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+    ],
+    price: "1 350 ₽",
+    lastPrice: "2 350 ₽",
+    discount: "-50%",
+    name: "Массажер для рук с инфракрасным прогревом",
+    stars: 3,
+    rating: "3,7",
+    slidesPreview: [
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+      "./img/prod/prod-2.png",
+    ],
+  },
+  {
+    images: [
+      "./img/prod/prod-17.png",
+      "./img/prod/prod-17.png",
+      "./img/prod/prod-17.png",
+    ],
+    price: "666 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: 'Футболка СувенирShop "Жириновский"',
+    stars: 3,
+    rating: "3,7",
+  },
+  {
+    images: [
+      "./img/prod/prod-18.png",
+      "./img/prod/prod-18.png",
+      "./img/prod/prod-18.png",
+    ],
+    price: "2 350 ₽",
+    lastPrice: "1 350 ₽",
+    discount: "-50%",
+    name: "Портрет тигра в технике двойной экспозиции",
+    stars: 3,
+    rating: "3,7",
+  },
   {
     images: [
       "./img/prod/prod-7.png",
@@ -136,19 +243,9 @@ const products_2: IProducItem[] = [
 ];
 ---
 
-<Layout title="Главная">
-  <Header />
-  <Menu />
-
-  <MainBanner />
-
-  <ProductSlider
-    title="Хиты со скидкой"
-    items={[...products_1, ...products_1]}
-  />
-
-  <ProductSlider title="Подбор подарка" items={[...products_2, ...products_2]}>
-    <form action="#" class="filter" slot="filter">
+<section class="products">
+  <div class="container">
+    <form action="#" class="filter products__filter">
       <MultipleSelect
         placeholder="Кому"
         items={[
@@ -175,9 +272,11 @@ const products_2: IProducItem[] = [
       />
       <RangeSlider placeholder="Стоимость" />
     </form>
-  </ProductSlider>
 
-  <MainInfo />
+    <div class="products__list">
+      {items.map((item) => <ProductItem item={item} />)}
+    </div>
 
-  <Footer />
-</Layout>
+    <Pagination />
+  </div>
+</section>

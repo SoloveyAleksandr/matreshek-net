@@ -12,21 +12,41 @@ interface Props {
 const { item, className } = Astro.props;
 ---
 
-<div class:list={["product-item", className]}>
-  <div class="swiper product-item__images">
-    <div class="swiper-wrapper">
-      {
-        item.images.map((img) => (
-          <div class="swiper-slide">
-            <img src={img} alt="" loading="lazy" />
-            <div class="swiper-preloader">
-              <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+<div class:list={["product-item", className, { large: item.slidesPreview }]}>
+  <div class="product-item__images-wrapper">
+    <div class="swiper product-item__images">
+      <div class="swiper-wrapper">
+        {
+          item.images.map((img) => (
+            <div class="swiper-slide">
+              <img src={img} alt="" loading="lazy" />
+              <div class="swiper-preloader">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+              </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
+      {!item.slidesPreview && <div class="swiper-pagination" />}
     </div>
-    <div class="swiper-pagination"></div>
+    {
+      item.slidesPreview && (
+        <div class="swiper product-item__pagination">
+          <div class="swiper-wrapper">
+            {item.slidesPreview.map((j) => (
+              <div class="swiper-slide">
+                <div class="product-item__pagination-img">
+                  <img src={j} alt="" loading="lazy" />
+                  <div class="swiper-preloader">
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
   </div>
   <div class="product-item__container">
     <div class="product-item-price">

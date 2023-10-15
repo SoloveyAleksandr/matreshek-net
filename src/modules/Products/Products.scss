@@ -1,0 +1,14 @@
+.products {
+  margin-bottom: 6.4rem;
+
+  &__filter {
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, calc((100% - (3.2rem * 4)) / 5));
+    gap: 3.2rem;
+  }
+}

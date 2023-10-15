@@ -51,7 +51,6 @@ body {
       border-radius: 50%;
       transition: 0.3s;
       background-color: $gray-1;
-      cursor: pointer;
 
       &._active {
         background-color: $gray-3;
@@ -107,6 +106,13 @@ body {
       }
     }
   }
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .dropdown {

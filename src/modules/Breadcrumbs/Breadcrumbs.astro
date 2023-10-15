@@ -1,0 +1,19 @@
+---
+interface Props {
+  path: string[];
+}
+
+const { path } = Astro.props;
+---
+
+<div class="breadcrumbs">
+  <div class="container breadcrumbs__container">
+    {
+      path.map((i) => (
+        <a href="#" class="breadcrumbs__link">
+          {i}
+        </a>
+      ))
+    }
+  </div>
+</div>

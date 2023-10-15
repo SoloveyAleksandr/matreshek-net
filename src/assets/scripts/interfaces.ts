@@ -6,4 +6,5 @@ export interface IProducItem {
   name: string;
   stars: number;
   rating: string;
+  slidesPreview?: string[];
 }

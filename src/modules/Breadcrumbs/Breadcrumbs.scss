@@ -1,0 +1,29 @@
+.breadcrumbs {
+  margin: 4rem 0rem 4.4rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    color: $gray-3;
+
+    &:not(:last-child) {
+      @include defaultHover;
+
+      &::after {
+        content: " /";
+      }
+    }
+
+    &:last-child {
+      color: $gray-1;
+      pointer-events: none;
+    }
+  }
+}

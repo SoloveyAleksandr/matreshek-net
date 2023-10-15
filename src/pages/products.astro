@@ -1,0 +1,19 @@
+---
+import Breadcrumbs from "../modules/Breadcrumbs/Breadcrumbs.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../modules/Footer/Footer.astro";
+import Header from "../modules/Header/Header.astro";
+import Menu from "../modules/Menu/Menu.astro";
+import ProductsComponent from "../modules/Products/Products.astro";
+---
+
+<Layout title="Туристические аксессуары">
+  <Header />
+  <Menu />
+
+  <Breadcrumbs path={["Главная", "Каталог", "Туристические аксессуары"]} />
+
+  <ProductsComponent />
+
+  <Footer />
+</Layout>

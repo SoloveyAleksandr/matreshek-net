@@ -7,13 +7,14 @@ import {
   Pagination,
   EffectCreative,
   Autoplay,
+  Thumbs,
 } from "swiper/modules";
 import { initProductItems } from "../../components/ProductItem/ProductItem";
 import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
 import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSelect";
 import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
 
-Swiper.use([Navigation, Pagination, EffectCreative, Autoplay]);
+Swiper.use([Navigation, Pagination, EffectCreative, Autoplay, Thumbs]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
 
 mainBannerScript();
