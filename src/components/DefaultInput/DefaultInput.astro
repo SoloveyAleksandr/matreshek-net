@@ -2,9 +2,43 @@
 interface Props {
   as?: keyof astroHTML.JSX.IntrinsicElements;
   className?: string;
+  label?: string;
 }
 
-const { as: Wrapper = "input", className, ...rest } = Astro.props;
+const {
+  as: Wrapper = "input",
+  className,
+  label,
+  required,
+  ...rest
+} = Astro.props;
 ---
 
-<Wrapper type="text" {...rest} class:list={["default-input", className]} />
+<>
+  {
+    label ? (
+      <>
+        <label
+          class:list={[
+            "default-input-label",
+            { required: required },
+            className,
+          ]}
+        >
+          <span class="default-input-label__text">{label}</span>
+          <Wrapper
+            type="text"
+            {...rest}
+            class:list={["default-input", className]}
+          />
+        </label>
+      </>
+    ) : (
+      <Wrapper
+        type="text"
+        {...rest}
+        class:list={["default-input", className]}
+      />
+    )
+  }
+</>

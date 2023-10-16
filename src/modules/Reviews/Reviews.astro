@@ -1,6 +1,7 @@
 ---
 import { Sprite } from "astro-icon";
 import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
+import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
 ---
 
 <div class="reviews">
@@ -9,6 +10,35 @@ import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
       Отзывы
       <span class="gray">9</span>
     </h6>
+
+    <form action="#" class="reviews-form">
+      <div class="reviews-form-rate">
+        <span class="reviews-form-rate__label">Ваша оценка</span>
+        <input type="text" class="reviews-form-rate__input" value="3" />
+        <div class="reviews-form-rate__list">
+          <button type="button" class="reviews-form-rate__btn">
+            <Sprite name="star" />
+          </button>
+          <button type="button" class="reviews-form-rate__btn">
+            <Sprite name="star" />
+          </button>
+          <button type="button" class="reviews-form-rate__btn">
+            <Sprite name="star" />
+          </button>
+          <button type="button" class="reviews-form-rate__btn">
+            <Sprite name="star" />
+          </button>
+          <button type="button" class="reviews-form-rate__btn">
+            <Sprite name="star" />
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews-form__inner">
+        <DefaultInput label="Ваше имя" required />
+        <DefaultInput label="E-mail" required />
+      </div>
+    </form>
 
     <div class="reviews__list">
       <div class="reviews-item">

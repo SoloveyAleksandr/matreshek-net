@@ -8,6 +8,7 @@ import Menu from "../modules/Menu/Menu.astro";
 import ProductHead from "../modules/ProductHead/ProductHead.astro";
 import ProductInfo from "../modules/ProductInfo/ProductInfo.astro";
 import ProductSlider from "../modules/ProductSlider/ProductSlider.astro";
+import Reviews from "../modules/Reviews/Reviews.astro";
 
 const products: IProducItem[] = [
   {
@@ -82,6 +83,10 @@ const products: IProducItem[] = [
   />
 
   <ProductHead />
+
+  <div class="container" style="margin: 0 0 10rem 0">
+    <Reviews />
+  </div>
 
   <ProductInfo />
 

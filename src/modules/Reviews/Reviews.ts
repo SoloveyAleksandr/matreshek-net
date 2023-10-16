@@ -1,13 +1,19 @@
 import gsap from "gsap";
-
-const reviewsRate = document.querySelector<HTMLElement>(".reviews-rate");
-const reviewsRateContainer = document.querySelector<HTMLElement>(
-  ".reviews-rate__container",
-);
-const reviewsRatePin =
-  document.querySelector<HTMLElement>(".reviews-rate__pin");
+import { ReviewsFormRateController } from "../../assets/scripts/utils";
 
 export const initRewiews = () => {
+  initRatePin();
+  initRateForm();
+};
+
+function initRatePin() {
+  const reviewsRate = document.querySelector<HTMLElement>(".reviews-rate");
+  const reviewsRateContainer = document.querySelector<HTMLElement>(
+    ".reviews-rate__container",
+  );
+  const reviewsRatePin =
+    document.querySelector<HTMLElement>(".reviews-rate__pin");
+
   if (reviewsRate && reviewsRatePin && reviewsRateContainer) {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -32,4 +38,18 @@ export const initRewiews = () => {
       }
     });
   }
-};
+}
+
+function initRateForm() {
+  const reviewsFomt = document.querySelector<HTMLFormElement>(".reviews-form");
+  const reviewsFormRateBtns = document.querySelectorAll<HTMLButtonElement>(
+    ".reviews-form-rate__btn",
+  );
+  const reviewsFormRateInput = document.querySelector<HTMLInputElement>(
+    ".reviews-form-rate__input",
+  );
+
+  if (reviewsFormRateBtns && reviewsFormRateInput) {
+    new ReviewsFormRateController(reviewsFormRateBtns, reviewsFormRateInput);
+  }
+}

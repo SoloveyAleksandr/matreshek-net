@@ -1,23 +1,30 @@
 import { DualHRangeBar } from "dual-range-bar";
 
-export class ProducItemStarsController {
-  starsList: NodeListOf<HTMLElement>;
+export class ReviewsFormRateController {
+  btns: NodeListOf<HTMLElement>;
+  input: HTMLInputElement;
 
-  constructor(starsList: NodeListOf<HTMLElement>) {
-    this.starsList = starsList;
+  constructor(btns: NodeListOf<HTMLButtonElement>, input: HTMLInputElement) {
+    this.btns = btns;
+    this.input = input;
 
     this.init();
   }
 
   init() {
-    this.starsList.forEach((item, index) => {
+    this.btns.forEach((item, index) => {
       item.addEventListener("mouseenter", this.setHover.bind(this, index));
       item.addEventListener("mouseleave", this.resetHover.bind(this));
+      item.addEventListener("click", this.setRate.bind(this, index));
     });
+
+    if (this.input.value && Number(this.input.value)) {
+      this.setRate(Number(this.input.value) - 1);
+    }
   }
 
   setHover(targetIndex: number) {
-    this.starsList.forEach((item, index) => {
+    this.btns.forEach((item, index) => {
       if (index <= targetIndex) {
         item.classList.add("_hover");
       }
@@ -25,9 +32,20 @@ export class ProducItemStarsController {
   }
 
   resetHover() {
-    this.starsList.forEach((item) => {
+    this.btns.forEach((item) => {
       item.classList.remove("_hover");
     });
+  }
+
+  setRate(targetIndex: number) {
+    this.btns.forEach((item, index) => {
+      if (index <= targetIndex) {
+        item.classList.add("_active");
+      } else {
+        item.classList.remove("_active");
+      }
+    });
+    this.input.value = (targetIndex + 1).toString();
   }
 }
 
