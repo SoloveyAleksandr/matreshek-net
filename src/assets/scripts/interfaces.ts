@@ -8,3 +8,9 @@ export interface IProducItem {
   rating: string;
   slidesPreview?: string[];
 }
+
+export interface IAdvItem {
+  img: string;
+  name: string;
+  price: string;
+}

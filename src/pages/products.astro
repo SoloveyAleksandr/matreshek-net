@@ -6,6 +6,7 @@ import Header from "../modules/Header/Header.astro";
 import Menu from "../modules/Menu/Menu.astro";
 import ProductsComponent from "../modules/Products/Products.astro";
 import SeoText from "../modules/SeoText/SeoText.astro";
+import HeadSlider from "../modules/HeadSlider/HeadSlider.astro";
 ---
 
 <Layout title="Туристические аксессуары">
@@ -13,6 +14,8 @@ import SeoText from "../modules/SeoText/SeoText.astro";
   <Menu />
 
   <Breadcrumbs path={["Главная", "Каталог", "Туристические аксессуары"]} />
+
+  <HeadSlider />
 
   <ProductsComponent />
 

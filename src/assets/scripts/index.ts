@@ -8,13 +8,22 @@ import {
   EffectCreative,
   Autoplay,
   Thumbs,
+  FreeMode,
 } from "swiper/modules";
 import { initProductItems } from "../../components/ProductItem/ProductItem";
 import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
 import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSelect";
 import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
+import { initHeadSlider } from "../../modules/HeadSlider/HeadSlider";
 
-Swiper.use([Navigation, Pagination, EffectCreative, Autoplay, Thumbs]);
+Swiper.use([
+  Navigation,
+  Pagination,
+  EffectCreative,
+  Autoplay,
+  Thumbs,
+  FreeMode,
+]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
 
 mainBannerScript();
@@ -26,6 +35,8 @@ initProductItems();
 initMultipleSelects();
 
 initRangeSliders();
+
+initHeadSlider();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {
