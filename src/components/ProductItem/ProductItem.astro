@@ -59,15 +59,14 @@ const { item, className } = Astro.props;
       <div class="product-item-rating__stars">
         {
           [...new Array(5)].map((s, i) => (
-            <button
-              type="button"
+            <span
               class:list={[
                 "product-item-rating__star",
-                i < item.stars ? "current" : "",
+                i < item.stars ? "active" : "",
               ]}
             >
               <Sprite name="star" />
-            </button>
+            </span>
           ))
         }
       </div>

@@ -1,13 +1,9 @@
 import Swiper from "swiper";
-import { ProducItemStarsController } from "../../assets/scripts/utils";
 
 const items = document.querySelectorAll(".product-item");
 
 export const initProductItems = () => {
   items.forEach((item) => {
-    const starBtns = item.querySelectorAll<HTMLElement>(
-      ".product-item-rating__star",
-    );
     const swiperContainer = item.querySelector<HTMLElement>(
       ".product-item__images",
     );
@@ -44,7 +40,5 @@ export const initProductItems = () => {
         });
       }
     }
-
-    new ProducItemStarsController(starBtns);
   });
 };

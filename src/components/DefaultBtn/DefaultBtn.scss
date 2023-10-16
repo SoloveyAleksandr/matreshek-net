@@ -11,12 +11,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   @include hover {
     opacity: 0.9;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
   }
 
   &.sm {
     height: 4.8rem;
     padding: 1rem 3.2rem;
+  }
+
+  &.light {
+    background-color: $light-3;
+    color: $black-text;
+    border-color: $light-3;
   }
 }

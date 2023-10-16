@@ -15,6 +15,7 @@ import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
 import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSelect";
 import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
 import { initAdvSlider } from "../../modules/AdvSlider/AdvSlider";
+import { initProductHead } from "../../modules/ProductHead/ProductHead";
 
 Swiper.use([
   Navigation,
@@ -37,6 +38,8 @@ initMultipleSelects();
 initRangeSliders();
 
 initAdvSlider();
+
+initProductHead();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

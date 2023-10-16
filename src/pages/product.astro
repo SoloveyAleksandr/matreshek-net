@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../modules/Breadcrumbs/Breadcrumbs.astro";
+import Footer from "../modules/Footer/Footer.astro";
+import Header from "../modules/Header/Header.astro";
+import Menu from "../modules/Menu/Menu.astro";
+import ProductHead from "../modules/ProductHead/ProductHead.astro";
+---
+
+<Layout>
+  <Header />
+  <Menu />
+
+  <Breadcrumbs
+    path={[
+      "Главная",
+      "Каталог",
+      "Туристические аксессуары",
+      "Набор походный Сплав Track",
+    ]}
+  />
+
+  <ProductHead />
+
+  <Footer />
+</Layout>

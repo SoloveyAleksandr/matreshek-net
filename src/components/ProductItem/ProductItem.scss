@@ -153,20 +153,9 @@
 
     &__star {
       color: $light-4;
-      transition: 0.3s;
 
-      &.current {
+      &.active {
         color: $accent;
-
-        &._hover {
-          color: $accent;
-          opacity: 0.5;
-        }
-      }
-
-      &._hover {
-        color: $accent;
-        opacity: 0.2;
       }
 
       svg {
