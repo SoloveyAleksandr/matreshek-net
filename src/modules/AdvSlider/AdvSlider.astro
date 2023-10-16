@@ -36,21 +36,21 @@ const items: IAdvItem[] = [
 ];
 ---
 
-<section class="head-slider">
+<section class="adv-slider">
   <div class="container">
-    <h1 class="head-slider__title">Туристические аксессуары</h1>
-    <div class="swiper head-slider__swiper">
+    <h1 class="adv-slider__title">Туристические аксессуары</h1>
+    <div class="swiper adv-slider__swiper">
       <div class="swiper-wrapper">
         {
           [...items, ...items].map((i) => (
             <div class="swiper-slide">
-              <a href="#" class="head-slider-item">
-                <div class="head-slider-item__img">
+              <a href="#" class="adv-slider-item">
+                <div class="adv-slider-item__img">
                   <img src={i.img} alt="" loading="lazy" />
                 </div>
-                <div class="head-slider-item__inner">
-                  <h4 class="head-slider-item__name">{i.name}</h4>
-                  <span class="head-slider-item__price">{i.price}</span>
+                <div class="adv-slider-item__inner">
+                  <h4 class="adv-slider-item__name">{i.name}</h4>
+                  <span class="adv-slider-item__price">{i.price}</span>
                 </div>
               </a>
             </div>
@@ -58,12 +58,12 @@ const items: IAdvItem[] = [
         }
       </div>
       <div class="swiper-btns">
-        <div class="head-slider__btn head-slider__btn_prev">
+        <div class="adv-slider__btn adv-slider__btn_prev">
           <button type="button" class="swiper-btns__btn swiper-btns__btn_prev">
             <Sprite name="fi_chevron-right" />
           </button>
         </div>
-        <div class="head-slider__btn head-slider__btn_next">
+        <div class="adv-slider__btn adv-slider__btn_next">
           <button type="button" class="swiper-btns__btn swiper-btns__btn_next">
             <Sprite name="fi_chevron-right" />
           </button>

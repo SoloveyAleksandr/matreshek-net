@@ -1,16 +1,16 @@
 import Swiper from "swiper";
 
-export const initHeadSlider = () => {
+export const initAdvSlider = () => {
   const swiperContainer = document.querySelector<HTMLElement>(
-    ".head-slider__swiper",
+    ".adv-slider__swiper",
   );
 
   if (swiperContainer) {
     const prevBtn = swiperContainer.querySelector<HTMLElement>(
-      ".head-slider__btn_prev",
+      ".adv-slider__btn_prev",
     );
     const nextBtn = swiperContainer.querySelector<HTMLElement>(
-      ".head-slider__btn_next",
+      ".adv-slider__btn_next",
     );
 
     new Swiper(swiperContainer, {

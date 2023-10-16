@@ -54,7 +54,7 @@ const { item, className } = Astro.props;
       <span class="product-item-price__discount">{item.discount}</span>
       <span class="product-item-price__last">{item.lastPrice}</span>
     </div>
-    <h4 class="product-item__name" title={item.name}>{item.name}</h4>
+    <a href="#" class="product-item__name" title={item.name}>{item.name}</a>
     <div class="product-item-rating">
       <div class="product-item-rating__stars">
         {
