@@ -16,6 +16,8 @@ import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSel
 import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
 import { initAdvSlider } from "../../modules/AdvSlider/AdvSlider";
 import { initProductHead } from "../../modules/ProductHead/ProductHead";
+import { Dropdown } from "./utils";
+import { initProductInfo } from "../../modules/ProductInfo/ProductInfo";
 
 Swiper.use([
   Navigation,
@@ -26,6 +28,9 @@ Swiper.use([
   FreeMode,
 ]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
+
+const dropDownBtns = document.querySelectorAll<HTMLElement>("[data-dropdown]");
+dropDownBtns.forEach((container) => new Dropdown(container));
 
 mainBannerScript();
 
@@ -40,6 +45,8 @@ initRangeSliders();
 initAdvSlider();
 
 initProductHead();
+
+initProductInfo();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {
