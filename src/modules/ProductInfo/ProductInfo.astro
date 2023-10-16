@@ -1,19 +1,12 @@
 ---
 import { Sprite } from "astro-icon";
+import Reviews from "../Reviews/Reviews.astro";
 ---
 
 <section class="product-info">
   <div class="container product-info__container">
     <div class="product-info-btns">
       <span class="product-info-btns__dash"></span>
-      <!-- <button type="button" class="product-info-btns__btn">Описание</button>
-      <button type="button" class="product-info-btns__btn">
-        Характиристики
-      </button>
-      <button type="button" class="product-info-btns__btn">
-        Отзывы <span class="gray"> 9</span>
-      </button>
-      <button type="button" class="product-info-btns__btn">Доставка</button> -->
     </div>
     <div class="swiper product-info__swiper">
       <div class="swiper-wrapper">
@@ -89,25 +82,15 @@ import { Sprite } from "astro-icon";
         <div class="swiper-slide">
           <div class="dropdown product-info-item" data-dropdown>
             <button type="button" class="dropdown-btn">
-              <span class="dropdown-btn__text">Отзывы</span>
+              <span class="dropdown-btn__text">
+                Отзывы <span class="gray">9</span>
+              </span>
               <Sprite name="fi_chevron-down" />
             </button>
             <div class="dropdown__container">
               <div class="dropdown__inner">
                 <div class="product-info-item__container">
-                  <div class="product-info__text">
-                    <p>
-                      Сделайте сюрприз своим близким или друзьям прямо сейчас,
-                      оформив заказ с доставкой, или приходите к нам. Мы поможем
-                      превратить скучные серые дни, в яркие и праздничные!
-                    </p>
-                    <p>
-                      Сделайте сюрприз своим близким или друзьям прямо сейчас,
-                      оформив заказ с доставкой, или приходите к нам. <br />
-                       Мы поможем превратить скучные серые дни, в яркие и
-                      праздничные!
-                    </p>
-                  </div>
+                  <Reviews />
                 </div>
               </div>
             </div>

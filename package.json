@@ -11,8 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.24",
     "astro": "^3.0.13",
     "dual-range-bar": "^1.0.3",
+    "gsap": "^3.12.2",
     "swiper": "^10.3.1"
   },
   "devDependencies": {

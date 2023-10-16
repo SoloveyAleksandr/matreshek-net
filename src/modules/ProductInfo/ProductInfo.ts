@@ -15,28 +15,32 @@ export const initProductInfo = () => {
       autoHeight: true,
       speed: 800,
       spaceBetween: 50,
+      allowTouchMove: false,
     });
 
     const btnsFragment = document.createDocumentFragment();
 
     swiper.slides.forEach((slide, index) => {
       const btnText =
-        slide.querySelector(".dropdown-btn__text")?.textContent ||
+        slide.querySelector(".dropdown-btn__text")?.innerHTML ||
         "Заголовок не задат";
 
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "product-info-btns__btn";
-      btn.textContent = btnText;
+      btn.innerHTML = btnText;
 
       btn.addEventListener("click", () => clickHandler(btn, index));
       btnsFragment.appendChild(btn);
+
+      if (index === 0) {
+        setTimeout(() => clickHandler(btn, index), 0);
+      }
     });
 
     btnsContainer.appendChild(btnsFragment);
 
     function clickHandler(btn: HTMLElement, index: number) {
-      console.log(btn, index);
       if (btnsContainer && btnsDash) {
         const leftPerc =
           btn.offsetLeft / (btnsContainer.offsetWidth / 100) + "%";

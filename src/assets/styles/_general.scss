@@ -198,3 +198,18 @@ body {
     width: 100%;
   }
 }
+
+.rate {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: $light-4;
+
+    &.active {
+      color: $accent;
+    }
+  }
+}

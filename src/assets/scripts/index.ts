@@ -18,6 +18,13 @@ import { initAdvSlider } from "../../modules/AdvSlider/AdvSlider";
 import { initProductHead } from "../../modules/ProductHead/ProductHead";
 import { Dropdown } from "./utils";
 import { initProductInfo } from "../../modules/ProductInfo/ProductInfo";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { initRewiews } from "../../modules/Reviews/Reviews";
+
+gsap.registerPlugin(ScrollTrigger);
 
 Swiper.use([
   Navigation,
@@ -28,6 +35,8 @@ Swiper.use([
   FreeMode,
 ]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
+
+Fancybox.bind("[data-fancybox]", {});
 
 const dropDownBtns = document.querySelectorAll<HTMLElement>("[data-dropdown]");
 dropDownBtns.forEach((container) => new Dropdown(container));
@@ -47,6 +56,8 @@ initAdvSlider();
 initProductHead();
 
 initProductInfo();
+
+initRewiews();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {
