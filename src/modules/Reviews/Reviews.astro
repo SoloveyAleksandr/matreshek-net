@@ -2,6 +2,7 @@
 import { Sprite } from "astro-icon";
 import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
 import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
+import FileInput from "../../components/FileInput/FileInput.astro";
 ---
 
 <div class="reviews">
@@ -38,6 +39,8 @@ import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
         <DefaultInput label="Ваше имя" required />
         <DefaultInput label="E-mail" required />
       </div>
+      <DefaultInput label="Комментарий" as="textarea" />
+      <FileInput />
     </form>
 
     <div class="reviews__list">
