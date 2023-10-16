@@ -18,9 +18,10 @@
 
     &__dash {
       width: 8rem;
-      border-bottom: 0.2rem solid $accent;
+      border: 0.1rem solid $accent;
+      border-radius: 0.1rem;
       position: absolute;
-      bottom: 0;
+      bottom: -0.1rem;
       left: 0;
       transition: 0.5s;
     }
@@ -52,6 +53,7 @@
 
       &__container {
         width: 100%;
+        max-height: unset;
         position: static;
         display: block;
         opacity: 1;
@@ -68,6 +70,32 @@
     gap: 1em;
   }
 
-  &__spec {
+  &-spec {
+    width: 100%;
+
+    tbody {
+    }
+
+    tr {
+      border-bottom: 0.1rem solid $light-3;
+
+      &:first-child {
+        td {
+          padding-top: 0;
+        }
+      }
+    }
+
+    td {
+      padding: 3.2rem;
+
+      &:first-child {
+        padding-right: 0;
+      }
+
+      &:last-child {
+        padding-left: 0;
+      }
+    }
   }
 }
