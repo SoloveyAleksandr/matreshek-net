@@ -58,6 +58,10 @@ h6 {
   font-weight: 500;
 }
 
+svg[astro-icon="fi_heart"] {
+  fill: transparent;
+}
+
 .container {
   padding: 0rem 3.2rem;
   width: 100%;
