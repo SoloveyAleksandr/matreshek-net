@@ -33,6 +33,31 @@ body {
   }
 }
 
+h1 {
+  font-size: 3.4rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+h5 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h6 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
 .container {
   padding: 0rem 3.2rem;
   width: 100%;
@@ -40,6 +65,14 @@ body {
 
 .gray {
   color: $gray-1;
+}
+
+.dark {
+  color: $dark-2;
+}
+
+.accent {
+  color: $accent;
 }
 
 .swiper {
