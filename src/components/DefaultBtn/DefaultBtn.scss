@@ -27,9 +27,14 @@
   }
 
   &.light {
-    background-color: $light-3;
+    background-color: #f9fafb;
     color: $black-text;
-    border-color: $light-3;
+    border-color: #f9fafb;
+    @include hover {
+      background-color: $light-3;
+      color: $black-text;
+      border-color: $light-3;
+    }
   }
 
   &.white {

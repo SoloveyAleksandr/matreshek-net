@@ -164,6 +164,25 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.2rem;
+
+      .product-head-main__fav-btn {
+        @include hover {
+          svg {
+            color: $black-text;
+          }
+        }
+
+        svg {
+          color: $gray-1;
+          fill: transparent;
+          transition: 0.3s;
+
+          &._active {
+            color: $accent;
+            fill: $accent;
+          }
+        }
+      }
     }
 
     &-info {

@@ -65,7 +65,10 @@
       font-weight: 600;
       line-height: normal;
       color: $dark-3;
-      @include defaultHover;
+      transition: 0.3s;
+      @include hover {
+        color: $accent;
+      }
     }
 
     &__btn {
@@ -74,7 +77,24 @@
       font-weight: 400;
       line-height: normal;
       color: $accent;
-      @include defaultHover;
+      position: relative;
+      transition: 0.3s;
+      @include hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.4rem;
+        width: 100%;
+        border-bottom: 0.1rem solid $accent;
+        transition: 0.3s;
+        transform: scaleX(0);
+      }
     }
   }
 
@@ -146,17 +166,12 @@
       line-height: normal;
       transition: 0.3s;
       @include hover {
-        color: $gray-2;
-
-        svg {
-          color: $accent;
-        }
+        color: $accent;
       }
 
       svg {
         width: 2.4rem;
         height: 2.4rem;
-        transition: 0.3s;
       }
     }
   }
