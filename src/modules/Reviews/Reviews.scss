@@ -234,4 +234,9 @@
     align-items: flex-end;
     gap: 1.6rem;
   }
+
+  &__btn {
+    width: fit-content;
+    min-width: 28.6rem;
+  }
 }

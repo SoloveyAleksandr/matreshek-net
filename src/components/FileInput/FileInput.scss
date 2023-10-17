@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
 
-  &.loaded {
+  &._loaded {
     .file-input__icon {
       svg {
         &:nth-child(1) {
@@ -13,6 +13,19 @@
           opacity: 1;
         }
       }
+    }
+
+    .file-input__placeholder {
+      display: none;
+    }
+
+    .file-input__file {
+      display: block;
+    }
+
+    .file-input__btn {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 
@@ -51,6 +64,7 @@
     @include hover {
       border-color: $light-6;
     }
+    cursor: pointer;
   }
 
   &__input {
@@ -119,6 +133,8 @@
     @include hover {
       color: $gray-3;
     }
+    opacity: 0;
+    pointer-events: none;
 
     svg {
       width: 2.4rem;

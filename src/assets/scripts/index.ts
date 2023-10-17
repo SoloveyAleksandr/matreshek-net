@@ -23,6 +23,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { initRewiews } from "../../modules/Reviews/Reviews";
+import { initFileInputs } from "../../components/FileInput/FileInput";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,6 +59,8 @@ initProductHead();
 initProductInfo();
 
 initRewiews();
+
+initFileInputs();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

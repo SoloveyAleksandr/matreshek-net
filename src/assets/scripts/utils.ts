@@ -296,3 +296,46 @@ export class RangeSlider extends Dropdown {
     }
   }
 }
+
+export class FileInput {
+  container: HTMLElement;
+  input: HTMLInputElement;
+  btn: HTMLButtonElement;
+  fileName: HTMLElement;
+  isLoaded: boolean;
+  isError: boolean;
+
+  constructor(
+    container: HTMLElement,
+    input: HTMLInputElement,
+    btn: HTMLButtonElement,
+    fileName: HTMLElement,
+  ) {
+    this.container = container;
+    this.input = input;
+    this.btn = btn;
+    this.fileName = fileName;
+    this.isLoaded = false;
+    this.isError = false;
+
+    this.init();
+  }
+
+  init() {
+    this.input.addEventListener("input", this.onLoad.bind(this));
+    this.btn.addEventListener("click", this.clear.bind(this));
+  }
+
+  onLoad() {
+    if (this.input.files && this.input.files[0]) {
+      this.fileName.textContent = this.input.files[0].name;
+      this.container.classList.add("_loaded");
+    }
+  }
+
+  clear() {
+    this.container.classList.remove("_loaded");
+    this.input.value = "";
+    this.fileName.textContent = "";
+  }
+}

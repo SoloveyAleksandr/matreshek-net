@@ -3,6 +3,7 @@ interface Props {
   as?: keyof astroHTML.JSX.IntrinsicElements;
   className?: string;
   label?: string;
+  error?: boolean;
 }
 
 const {
@@ -10,6 +11,7 @@ const {
   className,
   label,
   required,
+  error,
   ...rest
 } = Astro.props;
 ---
@@ -22,6 +24,7 @@ const {
           class:list={[
             "default-input-label",
             { required: required },
+            { _error: error },
             className,
           ]}
         >
@@ -29,7 +32,7 @@ const {
           <Wrapper
             type="text"
             {...rest}
-            class:list={["default-input", className]}
+            class:list={["default-input", { _error: error }, className]}
           />
           <span class="default-input-label__error">Неверный формат</span>
         </label>
@@ -38,7 +41,7 @@ const {
       <Wrapper
         type="text"
         {...rest}
-        class:list={["default-input", className]}
+        class:list={["default-input", { _error: error }, className]}
       />
     )
   }

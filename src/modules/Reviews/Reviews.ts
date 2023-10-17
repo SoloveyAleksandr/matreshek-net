@@ -24,7 +24,6 @@ function initRatePin() {
           reviewsRateContainer.offsetHeight / (reviewsRate.offsetHeight / 100)
         }% top`,
         scrub: true,
-        markers: true,
       },
     });
     tl.to(reviewsRatePin, {

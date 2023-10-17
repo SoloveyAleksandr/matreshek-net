@@ -37,10 +37,13 @@ import FileInput from "../../components/FileInput/FileInput.astro";
 
       <div class="reviews-form__inner">
         <DefaultInput label="Ваше имя" required />
-        <DefaultInput label="E-mail" required />
+        <DefaultInput label="E-mail" required error />
       </div>
       <DefaultInput label="Комментарий" as="textarea" />
       <FileInput />
+      <DefaultBtn type="submit" size="sm" className="reviews-form__btn">
+        Опубликовать отзыв
+      </DefaultBtn>
     </form>
 
     <div class="reviews__list">
