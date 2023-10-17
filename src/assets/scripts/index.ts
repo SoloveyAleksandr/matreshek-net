@@ -26,6 +26,7 @@ import { initRewiews } from "../../modules/Reviews/Reviews";
 import { initFileInputs } from "../../components/FileInput/FileInput";
 import { initAboutSlider } from "../../modules/AboutSlider/AboutSlider";
 import { initUpBtn } from "../../components/UpBtn/UpBtn";
+import { initContactsSlider } from "../../modules/ContactsSlider/ContactsSlider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,6 +66,8 @@ initRewiews();
 initFileInputs();
 
 initAboutSlider();
+
+initContactsSlider();
 
 initUpBtn();
 
