@@ -9,6 +9,7 @@
   width: 11rem;
   border-right: 1px solid $light-3;
   transition: 0.3s;
+  cursor: pointer;
 
   @include breakpoint($xm-bp) {
     width: 100%;
@@ -17,6 +18,8 @@
   }
 
   &._active {
+    cursor: default;
+
     @include breakpoint($xm-bp) {
       pointer-events: all;
       opacity: 1;
