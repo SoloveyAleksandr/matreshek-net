@@ -31,4 +31,13 @@
     color: $black-text;
     border-color: $light-3;
   }
+
+  &.white {
+    background-color: $white;
+    color: $gray-3;
+    border-color: $light-3;
+    @include hover {
+      border-color: $light-4;
+    }
+  }
 }

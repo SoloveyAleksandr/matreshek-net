@@ -76,6 +76,21 @@ h6 {
 }
 
 .swiper {
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3.2rem;
+
+    &__title {
+      font-size: 3.4rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
   &-pagination {
     width: 100%;
     display: flex;

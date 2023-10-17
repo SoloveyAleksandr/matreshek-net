@@ -1,9 +1,9 @@
 ---
 interface Props {
-  as?: keyof astroHTML.JSX.IntrinsicElements;
   className?: string;
   size?: "sm" | "xs";
-  color?: "light";
+  color?: "light" | "white";
+  as?: astroHTML.JSX.IntrinsicElements;
 }
 
 const { as: Wrapper = "button", className, size, color, ...rest } = Astro.props;
