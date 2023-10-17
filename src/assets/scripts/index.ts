@@ -25,6 +25,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { initRewiews } from "../../modules/Reviews/Reviews";
 import { initFileInputs } from "../../components/FileInput/FileInput";
 import { initAboutSlider } from "../../modules/AboutSlider/AboutSlider";
+import { initUpBtn } from "../../components/UpBtn/UpBtn";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,6 +65,8 @@ initRewiews();
 initFileInputs();
 
 initAboutSlider();
+
+initUpBtn();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {

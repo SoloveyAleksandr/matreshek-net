@@ -1,6 +1,7 @@
 ---
 import { Sprite } from "astro-icon";
 import "../assets/styles/style.scss";
+import UpBtn from "../components/UpBtn/UpBtn.astro";
 
 interface Props {
   title?: string;
@@ -33,6 +34,7 @@ const { title = "заголовок страницы" } = Astro.props;
       <main class="page">
         <slot />
       </main>
+      <UpBtn />
     </Sprite.Provider>
   </body>
 </html>

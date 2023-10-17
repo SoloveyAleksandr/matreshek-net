@@ -3,41 +3,6 @@
   padding-top: 3.3rem;
   border-top: 0.1rem solid $light-3;
 
-  &-up {
-    width: 4.8rem;
-    height: 4.8rem;
-    border-radius: 50%;
-    background-color: rgba(249, 68, 68, 0.1);
-    position: relative;
-    transition: 0.3s;
-    color: $accent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include hover {
-      transform: rotate(180deg);
-
-      .footer-up__icon {
-        transform: rotate(-180deg);
-      }
-    }
-
-    &__ellipse {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
-
-    &__icon {
-      width: 2.8rem;
-      height: 2.8rem;
-      position: absolute;
-      transition: 0.3s;
-    }
-  }
-
   &__container {
     display: flex;
     align-items: flex-start;
@@ -120,16 +85,11 @@
       color: $gray-1;
     }
 
-    &__inner {
-      display: flex;
-      align-items: center;
-      gap: 5rem;
-    }
-
     &__cards {
       display: flex;
       align-items: center;
       gap: 2.8rem;
+      margin-right: 10rem;
 
       img {
         width: 100vw;
