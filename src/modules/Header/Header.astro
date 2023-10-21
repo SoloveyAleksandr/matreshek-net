@@ -3,54 +3,89 @@ import { Sprite } from "astro-icon";
 import SocialLink from "../../components/SocialLink/SocialLink.astro";
 import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
 import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
+
+interface Props {
+  min?: boolean;
+}
+
+const { min } = Astro.props;
 ---
 
-<header class="header">
+<header class:list={["header", { min: min }]}>
   <div class="container">
-    <div class="header-menu">
-      <button type="button" class="header__sity">
-        <Sprite name="fi_map-pin" />
-         Санкт-Петербург
-      </button>
-      <div class="header__nav">
-        <a href="#">Доставка</a>
-        <a href="#">Оплата</a>
-        <a href="#">Контакты</a>
-      </div>
-      <div class="header__social">
-        <SocialLink icon="telegram" href="#" />
-        <SocialLink icon="viber" href="#" />
-      </div>
-      <div class="header-call">
-        <a href="#" class="header-call__link">+7 (999) 854 22 55</a>
-        <button type="button" class="header-call__btn">Заказать звонок</button>
-      </div>
-    </div>
-    <div class="header__container">
-      <a href="#" class="header__logo">
-        <Sprite name="logo" />
-      </a>
-      <DefaultBtn size="sm" className="header__catalog">Каталог</DefaultBtn>
-      <div class="header-search">
-        <DefaultInput className="header-search__input" />
-        <button type="button" class="header-search__btn">
-          <Sprite name="fi_zoom-out" />
-        </button>
-      </div>
-      <div class="header-control">
-        <button type="button" class="header-control__btn">
-          <Sprite name="fi_user" />
-           Войти
-        </button>
-        <button type="button" class="header-control__btn">
-          <Sprite name="fi_heart" />
-           Избранное
-        </button>
-        <button type="button" class="header-control__btn">
-          <Sprite name="fi_shopping-cart" />
-           Корзина
-        </button>
-      </div>
-    </div>
+    {
+      min ? (
+        <div class="header__container">
+          <a href="#" class="header__back">
+            <Sprite name="fi_chevron-right" />
+            Назад к каталогу
+          </a>
+
+          <a href="#" class="header__logo">
+            <Sprite name="logo" />
+          </a>
+
+          <div class="header-call">
+            <a href="#" class="header-call__link">
+              +7 (999) 854 22 55
+            </a>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div class="header-menu">
+            <button type="button" class="header__sity">
+              <Sprite name="fi_map-pin" />
+              Санкт-Петербург
+            </button>
+            <div class="header__nav">
+              <a href="#">Доставка</a>
+              <a href="#">Оплата</a>
+              <a href="#">Контакты</a>
+            </div>
+            <div class="header__social">
+              <SocialLink icon="telegram" href="#" />
+              <SocialLink icon="viber" href="#" />
+            </div>
+            <div class="header-call">
+              <a href="#" class="header-call__link">
+                +7 (999) 854 22 55
+              </a>
+              <button type="button" class="header-call__btn">
+                Заказать звонок
+              </button>
+            </div>
+          </div>
+          <div class="header__container">
+            <a href="#" class="header__logo">
+              <Sprite name="logo" />
+            </a>
+            <DefaultBtn size="sm" className="header__catalog">
+              Каталог
+            </DefaultBtn>
+            <div class="header-search">
+              <DefaultInput className="header-search__input" />
+              <button type="button" class="header-search__btn">
+                <Sprite name="fi_zoom-out" />
+              </button>
+            </div>
+            <div class="header-control">
+              <button type="button" class="header-control__btn">
+                <Sprite name="fi_user" />
+                Войти
+              </button>
+              <button type="button" class="header-control__btn">
+                <Sprite name="fi_heart" />
+                Избранное
+              </button>
+              <button type="button" class="header-control__btn">
+                <Sprite name="fi_shopping-cart" />
+                Корзина
+              </button>
+            </div>
+          </div>
+        </>
+      )
+    }
   </div>
 </header>

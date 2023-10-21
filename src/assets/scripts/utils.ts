@@ -382,3 +382,73 @@ export class NavBarController {
     this.listContainer.appendChild(fragment);
   }
 }
+
+export class CartItem {
+  container: HTMLElement;
+  minusBtn: HTMLElement;
+  plusBtn: HTMLElement;
+  countContainer: HTMLElement;
+  priceContainer: HTMLElement;
+  counter: number;
+  prefix: string;
+  price: number;
+  discount: number;
+  lastPriceContainer: HTMLElement | null;
+
+  constructor(
+    container: HTMLElement,
+    minusBtn: HTMLElement,
+    plusBtn: HTMLElement,
+    countContainer: HTMLElement,
+    priceContainer: HTMLElement,
+  ) {
+    this.container = container;
+    this.minusBtn = minusBtn;
+    this.plusBtn = plusBtn;
+    this.countContainer = countContainer;
+    this.priceContainer = priceContainer;
+    this.lastPriceContainer = this.container.querySelector<HTMLElement>(
+      ".cart-item-price__last",
+    );
+    this.counter = 1;
+    this.prefix = this.container.dataset.prefix || "₽";
+    this.price = Number(this.container.dataset.price) || 0;
+    this.discount = Number(this.container.dataset.discount) || 0;
+
+    this.init();
+  }
+
+  init() {
+    this.minusBtn.addEventListener("click", () => {
+      this.increase();
+      this.updateValue();
+    });
+
+    this.plusBtn.addEventListener("click", () => {
+      this.decrease();
+      this.updateValue();
+    });
+
+    this.updateValue();
+  }
+
+  increase() {
+    if (this.counter > 1) {
+      this.counter--;
+    }
+  }
+
+  decrease() {
+    this.counter++;
+  }
+
+  updateValue() {
+    this.countContainer.innerText = this.counter.toString();
+    this.priceContainer.innerText = this.price * this.counter + this.prefix;
+    if (this.lastPriceContainer) {
+      this.lastPriceContainer.innerText =
+        (this.price + this.price * (this.discount / 100)) * this.counter +
+        this.prefix;
+    }
+  }
+}

@@ -31,6 +31,15 @@ body {
   @include breakpoint($xm-bp) {
     padding-left: 0;
   }
+
+  &.no-nav {
+    padding: 0;
+
+    .container {
+      max-width: 192rem;
+      padding: 0rem 3.2rem;
+    }
+  }
 }
 
 h1 {

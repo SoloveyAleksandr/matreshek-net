@@ -14,3 +14,10 @@ export interface IAdvItem {
   name: string;
   price: string;
 }
+
+export interface ICartItem {
+  name: string;
+  image: string;
+  price: number;
+  discount?: number;
+}

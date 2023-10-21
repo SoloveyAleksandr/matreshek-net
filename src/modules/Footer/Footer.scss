@@ -3,6 +3,10 @@
   padding-top: 3.3rem;
   border-top: 0.1rem solid $light-3;
 
+  &.min {
+    padding-top: 0;
+  }
+
   &__container {
     display: flex;
     align-items: flex-start;

@@ -1,6 +1,21 @@
 .header {
   position: static;
 
+  &__back {
+    color: $gray-3;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    @include hover {
+      color: $dark-1;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      display: none;
+    }
+  }
+
   &-menu {
     width: 100%;
     display: flex;
@@ -172,6 +187,19 @@
       svg {
         width: 2.4rem;
         height: 2.4rem;
+      }
+    }
+  }
+
+  &.min {
+    margin-bottom: 4rem;
+
+    .header {
+      &__container {
+        padding: 2rem 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
     }
   }

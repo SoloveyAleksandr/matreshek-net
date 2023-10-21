@@ -5,9 +5,10 @@ import UpBtn from "../components/UpBtn/UpBtn.astro";
 
 interface Props {
   title?: string;
+  nav?: boolean;
 }
 
-const { title = "заголовок страницы" } = Astro.props;
+const { title = "заголовок страницы", nav = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +32,7 @@ const { title = "заголовок страницы" } = Astro.props;
   </head>
   <body>
     <Sprite.Provider>
-      <main class="page">
+      <main class:list={["page", { "no-nav": !nav }]}>
         <slot />
       </main>
       <UpBtn />

@@ -28,6 +28,7 @@ import { initAboutSlider } from "../../modules/AboutSlider/AboutSlider";
 import { initUpBtn } from "../../components/UpBtn/UpBtn";
 import { initContactsSlider } from "../../modules/ContactsSlider/ContactsSlider";
 import { initNavBar } from "../../modules/NavBar/NavBar";
+import { initCartItems } from "../../components/CartItem/CartItem";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,8 @@ initFileInputs();
 initAboutSlider();
 
 initContactsSlider();
+
+initCartItems();
 
 const navBarController = initNavBar();
 
