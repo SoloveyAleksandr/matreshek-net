@@ -27,6 +27,7 @@ import { initFileInputs } from "../../components/FileInput/FileInput";
 import { initAboutSlider } from "../../modules/AboutSlider/AboutSlider";
 import { initUpBtn } from "../../components/UpBtn/UpBtn";
 import { initContactsSlider } from "../../modules/ContactsSlider/ContactsSlider";
+import { initNavBar } from "../../modules/NavBar/NavBar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,9 +70,26 @@ initAboutSlider();
 
 initContactsSlider();
 
+const navBarController = initNavBar();
+
 initUpBtn();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {
   headerCatalogBtn.addEventListener("click", () => menuController.openMenu());
+}
+
+{
+  let id = 0;
+
+  window.addEventListener("resize", () => {
+    clearTimeout(id);
+    id = setTimeout(afterResize, 500);
+  });
+
+  function afterResize() {
+    ScrollTrigger.update();
+
+    navBarController?.resizeHandler();
+  }
 }

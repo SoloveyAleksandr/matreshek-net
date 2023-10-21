@@ -56,8 +56,9 @@ export class Dropdown {
 
   constructor(container: HTMLElement) {
     this.container = container;
-    this.dropBtn =
-      this.container.querySelector<HTMLButtonElement>(".dropdown-btn");
+    this.dropBtn = this.container.querySelector<HTMLButtonElement>(
+      "[data-dropdown-btn]",
+    );
     this.isDropped = false;
 
     this.initDropdown();
@@ -337,5 +338,47 @@ export class FileInput {
     this.container.classList.remove("_loaded");
     this.input.value = "";
     this.fileName.textContent = "";
+  }
+}
+
+export class NavBarController {
+  items: NodeListOf<HTMLElement>;
+  listContainer: HTMLElement;
+  dropContainer: HTMLElement;
+
+  constructor(
+    items: NodeListOf<HTMLElement>,
+    listContainer: HTMLElement,
+    dropContainer: HTMLElement,
+  ) {
+    this.items = items;
+    this.listContainer = listContainer;
+    this.dropContainer = dropContainer;
+
+    this.resizeHandler();
+  }
+
+  resizeHandler() {
+    this.reset();
+
+    const fragment = document.createDocumentFragment();
+
+    [...this.items].reverse().forEach((item) => {
+      if (item.offsetTop > this.items[0].offsetTop) {
+        fragment.appendChild(item);
+      }
+    });
+
+    this.dropContainer.appendChild(fragment);
+  }
+
+  reset() {
+    const fragment = document.createDocumentFragment();
+
+    this.dropContainer.childNodes.forEach((item) => {
+      fragment.appendChild(item);
+    });
+
+    this.listContainer.appendChild(fragment);
   }
 }
