@@ -394,6 +394,7 @@ export class CartItem {
   price: number;
   discount: number;
   lastPriceContainer: HTMLElement | null;
+  valueInput: HTMLInputElement;
 
   constructor(
     container: HTMLElement,
@@ -401,6 +402,7 @@ export class CartItem {
     plusBtn: HTMLElement,
     countContainer: HTMLElement,
     priceContainer: HTMLElement,
+    valueInput: HTMLInputElement,
   ) {
     this.container = container;
     this.minusBtn = minusBtn;
@@ -410,6 +412,7 @@ export class CartItem {
     this.lastPriceContainer = this.container.querySelector<HTMLElement>(
       ".cart-item-price__last",
     );
+    this.valueInput = valueInput;
     this.counter = 1;
     this.prefix = this.container.dataset.prefix || "₽";
     this.price = Number(this.container.dataset.price) || 0;
@@ -443,6 +446,7 @@ export class CartItem {
   }
 
   updateValue() {
+    this.valueInput.value = this.counter.toString();
     this.countContainer.innerText = this.counter.toString();
     this.priceContainer.innerText = this.price * this.counter + this.prefix;
     if (this.lastPriceContainer) {

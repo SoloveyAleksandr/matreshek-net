@@ -22,7 +22,10 @@ const { item } = Astro.props;
   <div class="cart-item__inner">
     <span class="cart-item__title">{item.name}</span>
     <div class="cart-item__btns">
-      <button type="button" class="cart-item__btn active">
+      <button
+        type="button"
+        class:list={["cart-item__btn", { active: item.favorite }]}
+      >
         <Sprite name="fi_heart" />
       </button>
       <button type="button" class="cart-item__btn">

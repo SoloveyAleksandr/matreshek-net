@@ -12,14 +12,18 @@ export const initCartItems = () => {
     const priceContainer = container.querySelector<HTMLElement>(
       ".cart-item-price__current",
     );
+    const valueInput = container.querySelector<HTMLInputElement>(
+      ".cart-item-counter__input",
+    );
 
-    if (minusBtn && plusBtn && countContainer && priceContainer) {
+    if (minusBtn && plusBtn && countContainer && priceContainer && valueInput) {
       new CartItem(
         container,
         minusBtn,
         plusBtn,
         countContainer,
         priceContainer,
+        valueInput,
       );
     }
   });

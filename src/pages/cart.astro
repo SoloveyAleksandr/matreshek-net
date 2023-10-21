@@ -5,6 +5,8 @@ import Footer from "../modules/Footer/Footer.astro";
 import Header from "../modules/Header/Header.astro";
 import type { ICartItem } from "../assets/scripts/interfaces";
 import CartItem from "../components/CartItem/CartItem.astro";
+import DefaultInput from "../components/DefaultInput/DefaultInput.astro";
+import DefaultBtn from "../components/DefaultBtn/DefaultBtn.astro";
 
 const itemsList: ICartItem[] = [
   {
@@ -12,6 +14,7 @@ const itemsList: ICartItem[] = [
     image: "./img/prod/prod-7.png",
     price: 1250,
     discount: 10,
+    favorite: true,
   },
   {
     name: "Игрушка антистресс, электронный поп ит",
@@ -41,7 +44,32 @@ const itemsList: ICartItem[] = [
           </div>
         </div>
 
-        <div class="cart-info"></div>
+        <div class="cart-info">
+          <div class="cart-info__inner">
+            <div class="cart-info-item">
+              <span class="cart-info-item__text">
+                Товары
+                <span class="gray">2 шт.</span>
+              </span>
+              <span class="cart-info-item__value">5 000 ₽</span>
+            </div>
+            <div class="cart-info-item">
+              <span class="cart-info-item__text">Скидка</span>
+              <span class="cart-info-item__value">- 1 000 ₽</span>
+            </div>
+          </div>
+          <div class="cart-info-result">
+            <span class="cart-info-result__title">Итого</span>
+            <span class="cart-info-result__value">5 000 ₽</span>
+          </div>
+          <DefaultInput
+            className="cart-info__input"
+            placeholder="Ваш промокод"
+          />
+          <DefaultBtn className="cart-info__btn" type="submit">
+            Перейти к оформлению
+          </DefaultBtn>
+        </div>
       </form>
     </div>
   </section>

@@ -20,4 +20,5 @@ export interface ICartItem {
   image: string;
   price: number;
   discount?: number;
+  favorite?: boolean;
 }
