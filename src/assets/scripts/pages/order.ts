@@ -1,0 +1,38 @@
+import Swiper from "swiper";
+
+const orderType = document.querySelector(".order-type");
+
+export const initOrderType = () => {
+  if (orderType) {
+    const orderTypeBtns =
+      orderType.querySelector<HTMLElement>(".order-type__btns");
+    const orderTypeSwiper = orderType.querySelector<HTMLElement>(
+      ".order-type__swiper",
+    );
+
+    if (orderTypeBtns && orderTypeSwiper) {
+      const slides =
+        orderTypeSwiper.querySelectorAll<HTMLElement>(".swiper-slide");
+
+      new Swiper(orderTypeSwiper, {
+        effect: "fade",
+        autoHeight: true,
+        pagination: {
+          type: "bullets",
+          el: orderTypeBtns,
+          clickable: true,
+          bulletClass: "default-btn",
+          bulletActiveClass: "active",
+          renderBullet: function (index, className) {
+            const name: string = slides[index].dataset.type || "data-type";
+            return `
+            <button type="button" class="default-btn sm border order-type__btn ${className}">
+              ${name}
+            </button>
+          `;
+          },
+        },
+      });
+    }
+  }
+};

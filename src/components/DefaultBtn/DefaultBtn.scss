@@ -45,4 +45,18 @@
       border-color: $light-4;
     }
   }
+
+  &.border {
+    background-color: $white;
+    border: 0.2rem solid $light-3;
+    color: $gray-2;
+    @include hover {
+      border-color: $light-4;
+    }
+
+    &.active {
+      color: $accent;
+      border-color: $accent;
+    }
+  }
 }

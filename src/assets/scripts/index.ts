@@ -9,6 +9,7 @@ import {
   Autoplay,
   Thumbs,
   FreeMode,
+  EffectFade,
 } from "swiper/modules";
 import { initProductItems } from "../../components/ProductItem/ProductItem";
 import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
@@ -29,6 +30,7 @@ import { initUpBtn } from "../../components/UpBtn/UpBtn";
 import { initContactsSlider } from "../../modules/ContactsSlider/ContactsSlider";
 import { initNavBar } from "../../modules/NavBar/NavBar";
 import { initCartItems } from "../../components/CartItem/CartItem";
+import { initOrderType } from "./pages/order";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,6 +41,7 @@ Swiper.use([
   Autoplay,
   Thumbs,
   FreeMode,
+  EffectFade,
 ]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
 
@@ -72,6 +75,8 @@ initAboutSlider();
 initContactsSlider();
 
 initCartItems();
+
+initOrderType();
 
 const navBarController = initNavBar();
 

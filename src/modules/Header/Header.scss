@@ -2,17 +2,13 @@
   position: static;
 
   &__back {
+    display: flex;
+    align-items: center;
     color: $gray-3;
     font-size: 1.6rem;
     transition: 0.3s;
     @include hover {
-      color: $dark-1;
-    }
-
-    svg {
-      width: 2rem;
-      height: 2rem;
-      display: none;
+      color: $accent;
     }
   }
 
