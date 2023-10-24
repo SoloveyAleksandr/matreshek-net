@@ -2,10 +2,20 @@
   width: 100%;
   overflow: hidden;
 
+  @include breakpoint($sm-bp) {
+    overflow: visible;
+  }
+
   &__swiper {
     width: calc(100% + 2.4rem);
-    margin-right: -2.4em;
+    margin-right: -2.4rem;
     padding-right: 2.4rem;
+
+    @include breakpoint($sm-bp) {
+      width: calc(100% + 3.2rem);
+      margin: 0rem -1.6rem;
+      padding: 0rem 1.6rem;
+    }
 
     .swiper-slide {
       width: fit-content;

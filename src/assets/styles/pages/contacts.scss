@@ -13,6 +13,10 @@
     align-items: flex-start;
     gap: 3.2rem;
     position: relative;
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__container {
@@ -20,6 +24,10 @@
     display: flex;
     flex-direction: column;
     gap: 6.4rem;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+    }
   }
 
   &-info {
@@ -34,6 +42,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 3.2rem;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     a {
       transition: 0.3s;
@@ -75,9 +90,16 @@
     height: 62.7rem;
     border-radius: 1.2rem;
     overflow: hidden;
+
+    @include breakpoint($sm-bp) {
+      height: 45rem;
+    }
   }
 
   &-table {
+    width: 100%;
+    overflow: auto;
+
     &__title {
       font-size: 3.4rem;
       font-weight: 500;
@@ -93,6 +115,7 @@
 
     &__container {
       width: 100%;
+      min-width: 80rem;
 
       table {
         width: 100%;

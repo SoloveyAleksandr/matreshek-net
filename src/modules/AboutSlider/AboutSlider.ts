@@ -19,7 +19,12 @@ export const initAboutSlider = () => {
           prevEl: prevBtn,
           nextEl: nextBtn,
         },
-        slidesPerView: 5,
+        slidesPerView: 4,
+        breakpoints: {
+          1201: {
+            slidesPerView: 5,
+          },
+        },
       });
     }
   }

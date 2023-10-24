@@ -17,6 +17,11 @@
     gap: 8rem;
     position: relative;
 
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
     &._hidden {
       display: none;
     }
@@ -28,6 +33,11 @@
     flex-direction: column;
     gap: 6.4rem;
     width: 132rem;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+      gap: 4rem;
+    }
   }
 
   &__head {
@@ -163,6 +173,10 @@
     align-items: stretch;
     gap: 3.2rem;
 
+    @include breakpoint($sm-bp) {
+      position: static;
+    }
+
     &__title {
       margin-bottom: 0.8rem;
     }
@@ -190,6 +204,10 @@
     gap: 6.4rem;
     display: none;
 
+    @include breakpoint($sm-bp) {
+      padding: 2rem 0rem 0rem;
+    }
+
     &._show {
       display: flex;
     }
@@ -199,6 +217,10 @@
       flex-direction: column;
       align-items: center;
       gap: 6.4rem;
+
+      @include breakpoint($sm-bp) {
+        gap: 4rem;
+      }
     }
 
     &__inner {

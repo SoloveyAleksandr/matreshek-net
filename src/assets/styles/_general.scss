@@ -76,6 +76,10 @@ svg[astro-icon="fi_heart"] {
   width: 100%;
   max-width: calc(181rem);
   margin: 0 auto 0;
+
+  @include breakpoint($sm-bp) {
+    padding: 0rem 1.6rem;
+  }
 }
 
 .gray {

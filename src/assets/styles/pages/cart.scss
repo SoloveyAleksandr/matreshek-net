@@ -6,6 +6,11 @@
     align-items: flex-start;
     gap: 8rem;
     position: relative;
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+      gap: 6.4rem;
+    }
   }
 
   &__container {

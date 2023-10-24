@@ -5,6 +5,10 @@
     align-items: flex-start;
     gap: 3.2rem;
     margin-bottom: 8rem;
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__links {
@@ -30,6 +34,10 @@
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 150%;
+
+    @include breakpoint($sm-bp) {
+      gap: 4rem;
+    }
   }
 
   &__img {
