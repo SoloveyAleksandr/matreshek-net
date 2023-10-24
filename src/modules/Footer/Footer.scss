@@ -14,7 +14,7 @@
     gap: 22.2rem;
     margin-bottom: 3.3rem;
 
-    @include breakpoint($xm-bp) {
+    @include breakpoint($sm-bp) {
       gap: 3rem;
     }
   }

@@ -11,7 +11,7 @@
   transition: 0.3s;
   cursor: pointer;
 
-  @include breakpoint($xm-bp) {
+  @include breakpoint($sm-bp) {
     width: 100%;
     pointer-events: none;
     opacity: 0;
@@ -20,7 +20,7 @@
   &._active {
     cursor: default;
 
-    @include breakpoint($xm-bp) {
+    @include breakpoint($sm-bp) {
       pointer-events: all;
       opacity: 1;
     }

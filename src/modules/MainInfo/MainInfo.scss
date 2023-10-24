@@ -5,9 +5,15 @@
     padding: 5rem;
     border-radius: 0.8rem;
     border: 0.2rem solid $light-3;
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 54.82%;
     gap: 8.3rem;
+
+    @include breakpoint($sm-bp) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 4rem;
+    }
   }
 
   &__inner {
@@ -34,13 +40,17 @@
   }
 
   &__img {
-    flex: none;
-    width: 95.4rem;
-    height: calc(95.5rem * 0.5515);
-    overflow: hidden;
+    width: 100%;
+    padding-top: 55.45%;
+    height: min-content;
     border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
 
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
       object-fit: cover;
       object-position: center;
       width: 100%;

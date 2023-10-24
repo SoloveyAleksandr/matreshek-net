@@ -28,7 +28,7 @@ body {
   position: relative;
   padding-left: 11rem;
 
-  @include breakpoint($xm-bp) {
+  @include breakpoint($sm-bp) {
     padding-left: 0;
   }
 

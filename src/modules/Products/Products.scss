@@ -10,5 +10,9 @@
     display: grid;
     grid-template-columns: repeat(5, calc((100% - (3.2rem * 4)) / 5));
     gap: 3.2rem;
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(3, calc((100% - (3.2rem * 2)) / 3));
+    }
   }
 }

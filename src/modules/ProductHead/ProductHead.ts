@@ -12,7 +12,12 @@ export const initProductHead = () => {
     const pagSlider = new Swiper(paginationSlideContainer, {
       direction: "vertical",
       slidesPerView: "auto",
-      spaceBetween: 24,
+      spaceBetween: 10,
+      breakpoints: {
+        1201: {
+          spaceBetween: 24,
+        },
+      },
     });
 
     new Swiper(mainSlideContainer, {

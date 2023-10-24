@@ -126,7 +126,7 @@
     margin-right: 1.3rem;
     display: none;
 
-    @include breakpoint($xm-bp) {
+    @include breakpoint($sm-bp) {
       display: flex;
     }
   }

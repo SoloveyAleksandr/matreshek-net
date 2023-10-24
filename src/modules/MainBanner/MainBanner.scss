@@ -103,6 +103,10 @@
     width: 32.3rem;
     height: auto;
 
+    @include breakpoint($sm-bp) {
+      display: none;
+    }
+
     .swiper-wrapper {
       align-items: stretch;
     }

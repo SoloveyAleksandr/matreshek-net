@@ -20,8 +20,13 @@ export const initProductSliders = () => {
           prevEl: prevBtn,
           nextEl: nextBtn,
         },
-        slidesPerView: 5,
+        slidesPerView: 3,
         allowTouchMove: false,
+        breakpoints: {
+          1201: {
+            slidesPerView: 5,
+          },
+        },
       });
     }
   });
