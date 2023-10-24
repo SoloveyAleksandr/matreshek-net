@@ -1,4 +1,5 @@
 ---
+import { Sprite } from "astro-icon";
 import DefaultBtn from "../components/DefaultBtn/DefaultBtn.astro";
 import DefaultInput from "../components/DefaultInput/DefaultInput.astro";
 import Radio from "../components/Radio/Radio.astro";
@@ -12,7 +13,7 @@ import Header from "../modules/Header/Header.astro";
 
   <section class="order">
     <div class="container">
-      <form action="#" class="order__wrapper">
+      <form action="#" class="order__wrapper" data-submit-handler>
         <div class="order__container">
           <div class="order__head">
             <h1 class="order__title">Оформление заказа</h1>
@@ -121,12 +122,29 @@ import Header from "../modules/Header/Header.astro";
             Оплатить
           </DefaultBtn>
 
-          <div class="order-info__pay">
-            <Radio name={"order-pay-type"}>Банковская карта</Radio>
-            <Radio name={"order-pay-type"} checked>Наличные курьеру</Radio>
+          <div class="order-info-pay">
+            <h5 class="order-info-pay__title">Способ оплаты</h5>
+            <div class="order-info-pay__inner">
+              <Radio name={"order-pay-type"}>Банковская карта</Radio>
+              <Radio name={"order-pay-type"} checked>Наличные курьеру</Radio>
+            </div>
           </div>
         </div>
       </form>
+      <div class="order-success">
+        <div class="order-success__container">
+          <div class="order-success__icon">
+            <Sprite name="fi_check_2" />
+          </div>
+          <div class="order-success__inner">
+            <span class="order-success__title">Заказ успешно создан</span>
+            <span class="order-success__text">Номер заказа - 2334414114</span>
+          </div>
+        </div>
+        <DefaultBtn as="a" href="#" className="order-success__btn">
+          На главную
+        </DefaultBtn>
+      </div>
     </div>
   </section>
 

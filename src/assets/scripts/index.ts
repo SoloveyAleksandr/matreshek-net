@@ -1,4 +1,3 @@
-import "swiper/css/bundle";
 import { menuController } from "../../modules/Menu/Menu";
 import { mainBannerScript } from "../../modules/MainBanner/MainBanner";
 import Swiper from "swiper";
@@ -20,7 +19,6 @@ import { initProductHead } from "../../modules/ProductHead/ProductHead";
 import { Dropdown } from "./utils";
 import { initProductInfo } from "../../modules/ProductInfo/ProductInfo";
 import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { initRewiews } from "../../modules/Reviews/Reviews";

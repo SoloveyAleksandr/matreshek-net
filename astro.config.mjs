@@ -2,6 +2,7 @@ import { defineConfig, sharpImageService } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  // Отключает минификацию HTML
   compressHTML: false,
   trailingSlash: "never",
   build: {
@@ -14,21 +15,20 @@ export default defineConfig({
   },
   vite: {
     build: {
+      // Отключает разбитие CSS
+      cssCodeSplit: false,
+
+      // Отключает минификацию в CSS и JS
+      minify: true,
+
+      // Минимальный размер инлайна CSS и JS
+      assetsInlineLimit: 0,
+
       rollupOptions: {
+        // Названия без хэшей
         output: {
-          entryFileNames: "assets/index.js",
-          chunkFileNames: "chunks/chunk.[hash].mjs",
-          assetFileNames: (asset) => {
-            if (asset.name.includes("css")) {
-              if (asset.name.includes("hoisted")) {
-                return "assets/[name][extname]";
-              } else {
-                return "assets/style[extname]";
-              }
-            } else {
-              return "assets/[name]-[hash:4][extname]";
-            }
-          },
+          entryFileNames: "assets/[name].js",
+          assetFileNames: "assets/[name][extname]",
         },
       },
     },

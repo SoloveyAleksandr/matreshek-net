@@ -1,6 +1,8 @@
 import Swiper from "swiper";
 
 const orderType = document.querySelector(".order-type");
+const orderForm = document.querySelector<HTMLFormElement>(".order__wrapper");
+const orderSuccess = document.querySelector<HTMLElement>(".order-success");
 
 export const initOrderType = () => {
   if (orderType) {
@@ -32,6 +34,16 @@ export const initOrderType = () => {
           `;
           },
         },
+      });
+    }
+  }
+
+  if (orderForm && orderSuccess) {
+    if (orderForm.hasAttribute("data-submit-handler")) {
+      orderForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        orderForm.classList.add("_hidden");
+        orderSuccess.classList.add("_show");
       });
     }
   }

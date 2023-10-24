@@ -12,6 +12,7 @@
   @include hover {
     border-color: $light-6;
   }
+  cursor: pointer;
 
   &__input {
     display: none;
