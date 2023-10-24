@@ -2,22 +2,38 @@
   margin-bottom: 5.2rem;
 
   &__container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    column-gap: 10rem;
+    row-gap: 4.8rem;
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+    }
   }
 
   &-slider {
+    grid-area: 1/1/4/2;
     flex: none;
-    height: 79.8rem;
+    // height: 79.8rem;
     display: flex;
     align-items: stretch;
     gap: 2.4rem;
 
+    @include breakpoint($sm-bp) {
+      grid-area: 2/1/3/3;
+    }
+
     &__pagination {
+      margin: 0;
       width: 9.6rem;
       height: auto;
+
+      @include breakpoint($sm-bp) {
+        width: 8rem;
+      }
 
       .swiper-slide {
         width: 100%;
@@ -28,9 +44,12 @@
         cursor: pointer;
         border-radius: 0.8rem;
         overflow: hidden;
-
         @include hover {
           border-color: $accent_hover;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 8rem;
         }
 
         &.swiper-slide-thumb-active {
@@ -47,11 +66,17 @@
     }
 
     &__main {
-      width: 91.8rem;
-      height: auto;
-      flex: 1;
+      margin: 0;
+      width: 79.8rem;
+      height: calc(79.8rem * 0.833);
+      // height: auto;
       border: 0.2rem solid $light-3;
       border-radius: 1.2rem;
+
+      @include breakpoint($sm-bp) {
+        width: 60rem;
+        height: calc(60rem * 0.833);
+      }
 
       .swiper-wrapper {
         align-items: stretch;
@@ -69,13 +94,6 @@
         }
       }
     }
-  }
-
-  &__content {
-    flex: 1;
-    display: flex;
-    gap: 4.8rem;
-    flex-direction: column;
   }
 
   &__title {
@@ -107,6 +125,10 @@
       color: $accent;
     }
 
+    @include breakpoint($sm-bp) {
+      margin: 0;
+    }
+
     svg {
       width: 2rem;
       height: 2rem;
@@ -120,9 +142,14 @@
   }
 
   &-top {
+    grid-area: 1/2/2/3;
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+
+    @include breakpoint($sm-bp) {
+      grid-area: 1/1/2/3;
+    }
 
     &__inner {
       display: flex;
@@ -133,9 +160,14 @@
   }
 
   &-main {
+    grid-area: 2/2/3/3;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include breakpoint($sm-bp) {
+      grid-area: 3/1/4/2;
+    }
 
     &-price {
       display: flex;
@@ -229,10 +261,15 @@
   }
 
   &-spec {
+    grid-area: 3/2/4/3;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.6rem;
+
+    @include breakpoint($sm-bp) {
+      grid-area: 2/2/4/3;
+    }
 
     &__table {
       &._active {
