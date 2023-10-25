@@ -32,7 +32,7 @@ const { min } = Astro.props;
         </div>
       ) : (
         <>
-          <div class="header-menu">
+          <div class="header-contacts">
             <button type="button" class="header__sity">
               <Sprite name="fi_map-pin" />
               Санкт-Петербург
@@ -56,6 +56,9 @@ const { min } = Astro.props;
             </div>
           </div>
           <div class="header__container">
+            <button type="button" class="header__menu-btn">
+              <Sprite name="heroicons-outline:menu-alt-2" />
+            </button>
             <a href="#" class="header__logo">
               <Sprite name="logo" />
             </a>
