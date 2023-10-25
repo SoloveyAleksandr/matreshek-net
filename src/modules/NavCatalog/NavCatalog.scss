@@ -1,4 +1,4 @@
-.menu {
+.nav-catalog {
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -25,22 +25,22 @@
       opacity: 1;
     }
 
-    .menu__bg {
+    .nav-catalog__bg {
       opacity: 0.5;
       pointer-events: all;
     }
 
-    .menu__container {
+    .nav-catalog__container {
       pointer-events: all;
       background-color: $white;
       border-color: $light-3;
 
-      .menu-item__link {
+      .nav-catalog-item__link {
         color: $dark-1;
       }
     }
 
-    .menu__list {
+    .nav-catalog__list {
       overflow: auto;
     }
   }
@@ -80,10 +80,10 @@
 
   &-item {
     &._active {
-      .menu-item__btn {
+      .nav-catalog-item__btn {
         background-color: $light-5;
       }
-      .menu-item__container {
+      .nav-catalog-item__container {
         opacity: 1;
         pointer-events: all;
       }

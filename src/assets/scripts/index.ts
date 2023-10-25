@@ -1,4 +1,4 @@
-import { menuController } from "../../modules/Menu/Menu";
+import { navCatalogController } from "../../modules/NavCatalog/NavCatalog";
 import { mainBannerScript } from "../../modules/MainBanner/MainBanner";
 import Swiper from "swiper";
 import {
@@ -82,7 +82,9 @@ initUpBtn();
 
 const headerCatalogBtn = document.querySelector(".header__catalog");
 if (headerCatalogBtn) {
-  headerCatalogBtn.addEventListener("click", () => menuController.openMenu());
+  headerCatalogBtn.addEventListener("click", () =>
+    navCatalogController.openMenu(),
+  );
 }
 
 {

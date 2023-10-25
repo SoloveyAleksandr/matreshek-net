@@ -1,4 +1,4 @@
-class MenuController {
+class NavCatalogController {
   container: HTMLElement;
   items: NodeListOf<HTMLElement>;
   isActive: boolean;
@@ -19,14 +19,14 @@ class MenuController {
         e.stopPropagation();
         this.openMenu.call(this);
       });
-      // this.container.addEventListener("mouseleave", this.closeMenu.bind(this));
+
       this.bg.addEventListener("click", (e) => {
         e.stopPropagation();
         this.closeMenu.call(this);
       });
 
       items.forEach((i) => {
-        const link = i.querySelector<HTMLElement>(".menu-item__link");
+        const link = i.querySelector<HTMLElement>(".nav-catalog-item__link");
 
         if (link) {
           link.addEventListener("click", (e) => {
@@ -68,10 +68,15 @@ class MenuController {
 }
 
 const menu =
-  document.querySelector<HTMLElement>(".menu") || document.createElement("div");
-const menuBG =
-  document.querySelector<HTMLElement>(".menu__bg") ||
+  document.querySelector<HTMLElement>(".nav-catalog") ||
   document.createElement("div");
-const menuItems = document.querySelectorAll<HTMLElement>(".menu-item");
+const menuBG =
+  document.querySelector<HTMLElement>(".nav-catalog__bg") ||
+  document.createElement("div");
+const menuItems = document.querySelectorAll<HTMLElement>(".nav-catalog-item");
 
-export const menuController = new MenuController(menu, menuBG, menuItems);
+export const navCatalogController = new NavCatalogController(
+  menu,
+  menuBG,
+  menuItems,
+);
