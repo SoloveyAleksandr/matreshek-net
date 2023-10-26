@@ -16,6 +16,10 @@
     opacity: 0.9;
   }
 
+  @include breakpoint($xs-bp) {
+    height: 4.4rem;
+  }
+
   svg {
     width: 2rem;
     height: 2rem;
