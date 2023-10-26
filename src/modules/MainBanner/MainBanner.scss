@@ -13,11 +13,21 @@
     height: auto;
     border-radius: 1.2rem;
 
+    @include breakpoint($xs-bp) {
+      width: calc(100% + 3.2rem);
+      margin: 0rem -1.6rem;
+      border-radius: 0;
+    }
+
     .swiper-pagination {
       position: absolute;
       left: 0;
       bottom: 3.2rem;
       z-index: 100;
+
+      @include breakpoint($xs-bp) {
+        bottom: 1.6rem;
+      }
 
       span {
         width: 1rem;
@@ -72,6 +82,17 @@
       gap: 1.6rem;
       padding: 2rem 6.4rem;
       color: $white;
+
+      @include breakpoint($xs-bp) {
+        padding: 2.4rem 2.4rem 4rem;
+        justify-content: flex-start;
+        gap: 1.6rem;
+        background: linear-gradient(
+          170deg,
+          rgba(0, 0, 0, 0.25) 38.52%,
+          rgba(0, 0, 0, 0) 92.66%
+        );
+      }
     }
 
     &__title {
@@ -80,6 +101,11 @@
       font-weight: 700;
       line-height: 120%;
       max-width: 57.7rem;
+
+      @include breakpoint($xs-bp) {
+        font-size: 3.2rem;
+        font-weight: 500;
+      }
     }
 
     &__text {
@@ -88,6 +114,11 @@
       font-weight: 400;
       line-height: 160%;
       max-width: 57rem;
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        max-width: 25.6rem;
+      }
     }
 
     &__btn {
@@ -95,6 +126,10 @@
       background-color: $white;
       color: $dark-2;
       border-color: $white;
+
+      @include breakpoint($xs-bp) {
+        margin-top: auto;
+      }
     }
   }
 
