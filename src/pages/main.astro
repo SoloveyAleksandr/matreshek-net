@@ -144,42 +144,50 @@ const products_2: IProducItem[] = [
 
   <MainBanner />
 
-  <!-- <ProductSlider
+  <ProductSlider
     title="Хиты со скидкой"
     items={[...products_1, ...products_1]}
-  /> -->
+  />
 
-  <!-- <ProductSlider title="Подбор подарка" items={[...products_2, ...products_2]}>
-    <form action="#" class="filter" slot="filter">
-      <MultipleSelect
-        placeholder="Кому"
-        items={[
-          { name: "Молодому человеку", value: "1" },
-          { name: "Молодому человеку", value: "2" },
-          { name: "Молодому человеку", value: "3" },
-          { name: "Молодому человеку", value: "4" },
-          { name: "Молодому человеку", value: "5" },
-          { name: "Молодому человеку", value: "6" },
-          { name: "Молодому человеку", value: "7" },
-        ]}
-      />
-      <MultipleSelect
-        placeholder="Повод"
-        items={[
-          { name: "Молодому человеку", value: "1" },
-          { name: "Молодому человеку", value: "2" },
-          { name: "Молодому человеку", value: "3" },
-          { name: "Молодому человеку", value: "4" },
-          { name: "Молодому человеку", value: "5" },
-          { name: "Молодому человеку", value: "6" },
-          { name: "Молодому человеку", value: "7" },
-        ]}
-      />
-      <RangeSlider placeholder="Стоимость" />
+  <ProductSlider title="Подбор подарка" items={[...products_2, ...products_2]}>
+    <form action="#" class="swiper filter" slot="filter">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <MultipleSelect
+            placeholder="Кому"
+            items={[
+              { name: "Молодому человеку", value: "1" },
+              { name: "Молодому человеку", value: "2" },
+              { name: "Молодому человеку", value: "3" },
+              { name: "Молодому человеку", value: "4" },
+              { name: "Молодому человеку", value: "5" },
+              { name: "Молодому человеку", value: "6" },
+              { name: "Молодому человеку", value: "7" },
+            ]}
+          />
+        </div>
+        <div class="swiper-slide">
+          <MultipleSelect
+            placeholder="Повод"
+            items={[
+              { name: "Молодому человеку", value: "1" },
+              { name: "Молодому человеку", value: "2" },
+              { name: "Молодому человеку", value: "3" },
+              { name: "Молодому человеку", value: "4" },
+              { name: "Молодому человеку", value: "5" },
+              { name: "Молодому человеку", value: "6" },
+              { name: "Молодому человеку", value: "7" },
+            ]}
+          />
+        </div>
+        <div class="swiper-slide">
+          <RangeSlider placeholder="Стоимость" />
+        </div>
+      </div>
     </form>
-  </ProductSlider> -->
+  </ProductSlider>
 
-  <!-- <MainInfo /> -->
+  <MainInfo />
 
   <Footer />
 </Layout>

@@ -8,15 +8,34 @@
   }
 
   &__head {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
 
     &-inner {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 3.2rem;
+    }
+
+    .swiper-btns {
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 2.4rem;
+    display: none;
+
+    @include breakpoint($xs-bp) {
+      display: flex;
     }
   }
 
@@ -38,6 +57,10 @@
       }
     }
 
+    @include breakpoint($xs-bp) {
+      font-size: 2.8rem;
+    }
+
     &-icon {
       width: 2.8rem;
       height: 2.8rem;
@@ -50,6 +73,10 @@
       justify-content: center;
       transition: 0.3s;
 
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+
       svg {
         width: 100%;
         height: 100%;
@@ -61,13 +88,34 @@
     width: calc(100% + 3.2rem);
     margin-right: -3.2rem;
 
-    .swiper-wrapper {
-      align-items: stretch;
+    @include breakpoint($xs-bp) {
+      width: calc(100% + 1.2rem);
+      margin-right: -1.2rem;
     }
 
-    .swiper-slide {
+    &-wrapper {
+      align-items: stretch;
+
+      @include breakpoint($xs-bp) {
+        width: 100% !important;
+        transform: none !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1.2rem;
+      }
+    }
+
+    &-slide {
       height: auto;
       padding-right: 3.2rem;
+
+      @include breakpoint($xs-bp) {
+        padding: 0rem 1.2rem 0 0rem;
+
+        &:nth-child(1n + 5) {
+          display: none;
+        }
+      }
     }
   }
 }

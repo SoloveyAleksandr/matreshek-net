@@ -20,11 +20,14 @@ export const initProductSliders = () => {
           prevEl: prevBtn,
           nextEl: nextBtn,
         },
-        slidesPerView: 3,
+        slidesPerView: 2,
         allowTouchMove: false,
         breakpoints: {
           1201: {
             slidesPerView: 5,
+          },
+          601: {
+            slidesPerView: 3,
           },
         },
       });

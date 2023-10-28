@@ -9,6 +9,7 @@ import {
   Thumbs,
   FreeMode,
   EffectFade,
+  Grid,
 } from "swiper/modules";
 import { initProductItems } from "../../components/ProductItem/ProductItem";
 import { initProductSliders } from "../../modules/ProductSlider/ProductSlider";
@@ -16,7 +17,8 @@ import { initMultipleSelects } from "../../components/MultipleSelect/MultipleSel
 import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
 import { initAdvSlider } from "../../modules/AdvSlider/AdvSlider";
 import { initProductHead } from "../../modules/ProductHead/ProductHead";
-import { Dropdown } from "./utils";
+import { initFilterSwiper } from "./utils";
+import { Dropdown } from "./Dropdown";
 import { initProductInfo } from "../../modules/ProductInfo/ProductInfo";
 import { Fancybox } from "@fancyapps/ui";
 import { gsap } from "gsap";
@@ -40,6 +42,7 @@ Swiper.use([
   Thumbs,
   FreeMode,
   EffectFade,
+  Grid,
 ]);
 Swiper.defaults.lazyPreloaderClass = "swiper-preloader";
 
@@ -53,6 +56,8 @@ mainBannerScript();
 initProductSliders();
 
 initProductItems();
+
+initFilterSwiper();
 
 initMultipleSelects();
 

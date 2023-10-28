@@ -2,6 +2,7 @@
 import { Sprite } from "astro-icon";
 import type { IProducItem } from "../../assets/scripts/interfaces";
 import ProductItem from "../../components/ProductItem/ProductItem.astro";
+import DefaultBtn from "../../components/DefaultBtn/DefaultBtn.astro";
 
 interface Props {
   title: string;
@@ -10,10 +11,10 @@ interface Props {
   hasFilter?: boolean;
 }
 
-const { title, items, className, hasFilter } = Astro.props;
+const { title, items, className } = Astro.props;
 ---
 
-<section class="product-slider">
+<section class:list={["product-slider", className]}>
   <div class="container product-slider__container">
     <div class="swiper-head product-slider__head">
       <div class="product-slider__head-inner">
@@ -36,15 +37,24 @@ const { title, items, className, hasFilter } = Astro.props;
     </div>
 
     <div class="swiper product-slider__swiper">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper product-slider__swiper-wrapper">
         {
           items.map((item) => (
-            <div class="swiper-slide">
+            <div class="swiper-slide product-slider__swiper-slide">
               <ProductItem item={item} />
             </div>
           ))
         }
       </div>
     </div>
+
+    <DefaultBtn
+      color="accent-light"
+      as="a"
+      href="#"
+      className="product-slider__btn"
+    >
+      Все хиты со скидкой
+    </DefaultBtn>
   </div>
 </section>
