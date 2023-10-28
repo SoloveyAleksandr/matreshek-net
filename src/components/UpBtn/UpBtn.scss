@@ -15,10 +15,14 @@
   transform: translateY(100%);
   opacity: 0;
   pointer-events: none;
-
   @include hover {
     background-color: $accent;
     color: $white;
+  }
+
+  @include breakpoint($xs-bp) {
+    right: 1.6rem;
+    bottom: 1.6rem;
   }
 
   &._show {

@@ -1,18 +1,23 @@
 .product-item {
   width: 100%;
-  height: 54.7rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  border-radius: 0.8rem;
-  border: 0.2rem solid $light-3;
-  background-color: $white;
-  padding: 2.2rem;
+  min-height: 0;
+  overflow: hidden;
 
-  @include breakpoint($xs-bp) {
-    position: relative;
-    padding: 0rem 0.8rem 0.8rem;
-    height: 37.8rem;
+  &__wrapper {
+    height: 54.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    border-radius: 0.8rem;
+    border: 0.2rem solid $light-3;
+    background-color: $white;
+    padding: 2.2rem;
+
+    @include breakpoint($xs-bp) {
+      position: relative;
+      padding: 0rem 0.8rem 0.8rem;
+      height: 37.8rem;
+    }
   }
 
   &__images-wrapper {
@@ -71,6 +76,10 @@
     width: 6.4rem;
     height: auto;
     margin: 0;
+
+    @include breakpoint($xs-bp) {
+      display: none;
+    }
 
     .swiper-slide {
       background-color: $white;
@@ -252,6 +261,10 @@
 
   &.large {
     grid-column: span 2;
+
+    @include breakpoint($xs-bp) {
+      grid-column: unset;
+    }
   }
 
   &.large & {
@@ -262,6 +275,19 @@
     &__images {
       height: auto;
       width: calc(100% - 3.2rem - 6.4rem);
+
+      @include breakpoint($xs-bp) {
+        height: 17.5rem;
+        width: 100%;
+      }
+
+      .swiper-pagination {
+        display: none;
+
+        @include breakpoint($xs-bp) {
+          display: flex;
+        }
+      }
     }
 
     &__container {
@@ -271,11 +297,22 @@
       grid-template-rows: auto 4.8rem;
       row-gap: 1.6rem;
       column-gap: 4.3rem;
+
+      @include breakpoint($xs-bp) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+      }
     }
 
     &-price {
       grid-area: 1/1/2/2;
       margin: 0;
+
+      @include breakpoint($xs-bp) {
+        margin-bottom: 0.8rem;
+      }
     }
 
     &__name {
@@ -285,11 +322,19 @@
     &-rating {
       grid-area: 1/2/2/3;
       margin: 0;
+
+      @include breakpoint($xs-bp) {
+        margin-top: auto;
+      }
     }
 
     &-btns {
       grid-area: 2/2/3/3;
       margin: 0;
+
+      @include breakpoint($xs-bp) {
+        margin-top: 2rem;
+      }
     }
   }
 }

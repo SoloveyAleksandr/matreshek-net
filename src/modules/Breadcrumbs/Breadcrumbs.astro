@@ -1,19 +1,27 @@
 ---
+import { Sprite } from "astro-icon";
 interface Props {
   path: string[];
+  mob: string;
 }
 
-const { path } = Astro.props;
+const { path, mob } = Astro.props;
 ---
 
 <div class="breadcrumbs">
-  <div class="container breadcrumbs__container">
-    {
-      path.map((i) => (
-        <a href="#" class="breadcrumbs__link">
-          {i}
-        </a>
-      ))
-    }
+  <div class="container">
+    <div class="breadcrumbs__list">
+      {
+        path.map((i) => (
+          <a href="#" class="breadcrumbs__link">
+            {i}
+          </a>
+        ))
+      }
+    </div>
+    <a href="#" class="breadcrumbs__mob">
+      <Sprite name="fi_chevron-right" />
+      {mob}
+    </a>
   </div>
 </div>

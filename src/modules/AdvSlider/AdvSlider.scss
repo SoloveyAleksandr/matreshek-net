@@ -5,6 +5,11 @@
     font-size: 3.4rem;
     font-weight: 500;
     margin-bottom: 3.2rem;
+
+    @include breakpoint($xs-bp) {
+      font-size: 2.8rem;
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__btn {
@@ -55,6 +60,12 @@
     display: flex;
     align-items: center;
 
+    @include breakpoint($xs-bp) {
+      width: calc(100% + 3.2rem);
+      margin: 0rem -1.6rem;
+      padding: 0rem 1.6rem;
+    }
+
     .swiper-wrapper {
       align-items: stretch;
     }
@@ -78,6 +89,10 @@
       pointer-events: none;
       justify-content: space-between;
 
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+
       &__btn {
         position: relative;
         pointer-events: all;
@@ -87,15 +102,20 @@
 
   &-item {
     height: 100%;
-    padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+    padding: 1.4rem 3rem 1.4rem 1.4rem;
     border: 0.2rem solid $light-3;
     border-radius: 0.8rem;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 3.2rem;
     transition: 0.3s;
     @include hover {
       border-color: $accent;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 2.4rem;
     }
 
     &__inner {
@@ -114,6 +134,18 @@
     &__price {
       font-size: 1.8rem;
       color: $gray-1;
+    }
+
+    &__img {
+      width: 6.2rem;
+      height: 6.2rem;
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

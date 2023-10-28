@@ -23,6 +23,12 @@ export const initProductItems = () => {
         });
 
         new Swiper(swiperContainer, {
+          pagination: {
+            el: pagination,
+            type: "bullets",
+            bulletActiveClass: "_active",
+            bulletClass: "swiper-pagination__bullet",
+          },
           spaceBetween: 30,
           thumbs: {
             swiper: paginationSwiper,

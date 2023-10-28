@@ -1,6 +1,10 @@
 .seo-text {
   margin-bottom: 6.4rem;
 
+  @include breakpoint($xs-bp) {
+    display: none;
+  }
+
   &__container {
     padding: 3.2rem;
     border-radius: 0.8rem;
