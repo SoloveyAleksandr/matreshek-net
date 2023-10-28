@@ -2,10 +2,9 @@
 import { Sprite } from "astro-icon";
 interface Props {
   path: string[];
-  mob: string;
 }
 
-const { path, mob } = Astro.props;
+const { path } = Astro.props;
 ---
 
 <div class="breadcrumbs">
@@ -21,7 +20,7 @@ const { path, mob } = Astro.props;
     </div>
     <a href="#" class="breadcrumbs__mob">
       <Sprite name="fi_chevron-right" />
-      {mob}
+       Вернуться на главную
     </a>
   </div>
 </div>

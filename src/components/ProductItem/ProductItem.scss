@@ -248,7 +248,7 @@
     .icon-btn {
       @include breakpoint($xs-bp) {
         position: absolute;
-        z-index: 100;
+        z-index: 10;
         top: 1.2rem;
         right: 1.2rem;
         padding: 0;

@@ -2,6 +2,10 @@
   .dropdown__container {
     padding: 0;
     width: 30.6rem;
+
+    @include breakpoint($xs-bp) {
+      transform: translateX(-50%);
+    }
   }
   &__container {
     width: 100%;

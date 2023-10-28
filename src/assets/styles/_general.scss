@@ -45,10 +45,18 @@ body {
 h1 {
   font-size: 3.4rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 2.8rem;
+  }
 }
 h2 {
   font-size: 3rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 2.6rem;
+  }
 }
 h3 {
   font-size: 2.4rem;
@@ -57,14 +65,26 @@ h3 {
 h4 {
   font-size: 2.2rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 2rem;
+  }
 }
 h5 {
   font-size: 2rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 1.8rem;
+  }
 }
 h6 {
   font-size: 1.8rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 svg[astro-icon="fi_heart"] {
@@ -194,6 +214,8 @@ svg[astro-icon="fi_heart"] {
   align-items: center;
   gap: 0.8rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 50;
 
   &.swiper {
     gap: 0;
