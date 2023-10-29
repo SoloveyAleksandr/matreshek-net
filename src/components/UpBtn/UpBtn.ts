@@ -21,6 +21,7 @@ export const initUpBtn = () => {
 
     tl.to(upBtnDash, {
       strokeDashoffset: 0,
+      ease: "none",
     });
 
     upBtn.addEventListener("click", () =>

@@ -126,6 +126,10 @@ svg[astro-icon="fi_heart"] {
     gap: 2rem;
     margin-bottom: 3.2rem;
 
+    @include breakpoint($xs-bp) {
+      margin-bottom: 2.4rem;
+    }
+
     &__title {
       font-size: 3.4rem;
       font-style: normal;

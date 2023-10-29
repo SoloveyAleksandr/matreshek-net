@@ -1,10 +1,19 @@
 .contacts {
   margin-bottom: 6.4rem;
 
+  @include breakpoint($xs-bp) {
+    margin-bottom: 2.4rem;
+  }
+
   &__title {
     font-size: 3.4rem;
     font-weight: 500;
     margin-bottom: 3.2rem;
+
+    @include breakpoint($xs-bp) {
+      font-size: 2.8rem;
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__wrapper {
@@ -28,6 +37,10 @@
     @include breakpoint($sm-bp) {
       width: 100%;
     }
+
+    @include breakpoint($xs-bp) {
+      gap: 3.2rem;
+    }
   }
 
   &-info {
@@ -48,6 +61,13 @@
       position: static;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 3rem 1.4rem 2.2rem;
     }
 
     a {
@@ -92,7 +112,7 @@
     overflow: hidden;
 
     @include breakpoint($sm-bp) {
-      height: 45rem;
+      height: 44.5rem;
     }
   }
 
@@ -104,6 +124,10 @@
       font-size: 3.4rem;
       font-weight: 500;
       margin-bottom: 3.2rem;
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.8rem;
+      }
     }
 
     &__text {
@@ -117,20 +141,50 @@
       width: 100%;
       min-width: 80rem;
 
+      @include breakpoint($xs-bp) {
+        min-width: unset;
+        width: 100%;
+      }
+
       table {
         width: 100%;
         color: $gray-3;
         font-size: 1.8rem;
 
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+        }
+
         tr {
           border-bottom: 0.1rem solid $light-3;
+
+          @include breakpoint($xs-bp) {
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+
+            &:first-child {
+              border-top: 0.1rem solid $light-3;
+            }
+          }
         }
 
         td {
           padding: 1.9rem 2.4rem;
 
+          @include breakpoint($xs-bp) {
+            padding: 0;
+          }
+
           &:first-child {
             width: 58.1rem;
+
+            @include breakpoint($xs-bp) {
+              width: unset;
+              color: $gray-1;
+            }
           }
         }
       }
