@@ -9,6 +9,9 @@ export const initProductHead = () => {
   );
 
   if (mainSlideContainer && paginationSlideContainer) {
+    const pagination =
+      mainSlideContainer.querySelector<HTMLElement>(".swiper-pagination");
+
     const pagSlider = new Swiper(paginationSlideContainer, {
       direction: "vertical",
       slidesPerView: "auto",
@@ -24,6 +27,13 @@ export const initProductHead = () => {
       spaceBetween: 30,
       thumbs: {
         swiper: pagSlider,
+      },
+      pagination: {
+        el: pagination,
+        type: "bullets",
+        clickable: true,
+        bulletActiveClass: "_active",
+        bulletClass: "swiper-pagination__bullet",
       },
     });
   }
