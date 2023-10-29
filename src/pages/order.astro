@@ -15,22 +15,46 @@ import Header from "../modules/Header/Header.astro";
     <div class="container">
       <form action="#" class="order__wrapper" data-submit-handler>
         <div class="order__container">
-          <div class="order__head">
-            <h1 class="order__title">Оформление заказа</h1>
-            <ul class="order-products">
-              <li class="order-products__item">
-                <img src="./img/prod/prod-7.png" alt="" />
-              </li>
-              <li class="order-products__item">
-                <img src="./img/prod/prod-11.png" alt="" />
-              </li>
-              <li class="order-products__item">
-                <img src="./img/prod/prod-2.png" alt="" />
-              </li>
-              <li class="order-products__item">
-                <img src="./img/prod/prod-6.png" alt="" />
-              </li>
-            </ul>
+          <h1 class="order__title">Оформление заказа</h1>
+
+          <div class="swiper order-products">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-7.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-11.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-2.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-6.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-11.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-2.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="order-products__item">
+                  <img src="./img/prod/prod-6.png" alt="" />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="order-contacts">
@@ -141,9 +165,14 @@ import Header from "../modules/Header/Header.astro";
             <span class="order-success__text">Номер заказа - 2334414114</span>
           </div>
         </div>
-        <DefaultBtn as="a" href="#" className="order-success__btn">
-          На главную
-        </DefaultBtn>
+        <div class="order-success__btns">
+          <DefaultBtn as="a" href="#" className="order-success__btn">
+            Перейти к заказу
+          </DefaultBtn>
+          <DefaultBtn as="a" href="#" className="order-success__btn">
+            На главную
+          </DefaultBtn>
+        </div>
       </div>
     </div>
   </section>

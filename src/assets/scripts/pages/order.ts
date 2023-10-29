@@ -4,6 +4,8 @@ const orderType = document.querySelector(".order-type");
 const orderForm = document.querySelector<HTMLFormElement>(".order__wrapper");
 const orderSuccess = document.querySelector<HTMLElement>(".order-success");
 
+const orderProducts = document.querySelector<HTMLElement>(".order-products");
+
 export const initOrderType = () => {
   if (orderType) {
     const orderTypeBtns =
@@ -17,7 +19,8 @@ export const initOrderType = () => {
         orderTypeSwiper.querySelectorAll<HTMLElement>(".swiper-slide");
 
       new Swiper(orderTypeSwiper, {
-        effect: "fade",
+        speed: 0,
+        allowTouchMove: false,
         autoHeight: true,
         pagination: {
           type: "bullets",
@@ -46,5 +49,12 @@ export const initOrderType = () => {
         orderSuccess.classList.add("_show");
       });
     }
+  }
+
+  if (orderProducts) {
+    new Swiper(orderProducts, {
+      slidesPerView: "auto",
+      freeMode: true,
+    });
   }
 };

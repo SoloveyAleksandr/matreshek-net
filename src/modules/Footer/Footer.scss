@@ -9,6 +9,14 @@
 
   &.min {
     padding-top: 0;
+
+    .footer {
+      &-legal {
+        @include breakpoint($xs-bp) {
+          padding: 1.6rem 0rem;
+        }
+      }
+    }
   }
 
   &__container {
