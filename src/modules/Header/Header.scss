@@ -10,6 +10,21 @@
     @include hover {
       color: $accent;
     }
+
+    @include breakpoint($xs-bp) {
+      font-size: 0;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      transform: scaleX(-1);
+      display: none;
+
+      @include breakpoint($xs-bp) {
+        display: block;
+      }
+    }
   }
 
   &-contacts {
@@ -271,6 +286,30 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+
+      &-call {
+        @include breakpoint($xs-bp) {
+          display: none;
+        }
+      }
+
+      &-search {
+        width: fit-content;
+        flex: none;
+        display: none;
+
+        @include breakpoint($xs-bp) {
+          display: flex;
+        }
+
+        &__input {
+          display: none;
+        }
+
+        &__btn {
+          position: static;
+        }
       }
     }
   }

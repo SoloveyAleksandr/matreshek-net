@@ -17,6 +17,7 @@ const { min } = Astro.props;
       min ? (
         <div class="header__container">
           <a href="#" class="header__back">
+            <Sprite name="fi_chevron-right" />
             Назад к каталогу
           </a>
 
@@ -28,6 +29,12 @@ const { min } = Astro.props;
             <a href="#" class="header-call__link">
               +7 (999) 854 22 55
             </a>
+          </div>
+          <div class="header-search">
+            <DefaultInput className="header-search__input" />
+            <button type="button" class="header-search__btn">
+              <Sprite name="fi_zoom-out" />
+            </button>
           </div>
         </div>
       ) : (
