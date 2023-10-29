@@ -408,35 +408,25 @@ export class CartItem {
   minusBtn: HTMLElement;
   plusBtn: HTMLElement;
   countContainer: HTMLElement;
-  priceContainer: HTMLElement;
   counter: number;
-  prefix: string;
-  price: number;
-  discount: number;
-  lastPriceContainer: HTMLElement | null;
   valueInput: HTMLInputElement;
+  changeEvent: Event;
 
   constructor(
     container: HTMLElement,
     minusBtn: HTMLElement,
     plusBtn: HTMLElement,
     countContainer: HTMLElement,
-    priceContainer: HTMLElement,
     valueInput: HTMLInputElement,
   ) {
     this.container = container;
     this.minusBtn = minusBtn;
     this.plusBtn = plusBtn;
     this.countContainer = countContainer;
-    this.priceContainer = priceContainer;
-    this.lastPriceContainer = this.container.querySelector<HTMLElement>(
-      ".cart-item-price__last",
-    );
     this.valueInput = valueInput;
     this.counter = 1;
-    this.prefix = this.container.dataset.prefix || "₽";
-    this.price = Number(this.container.dataset.price) || 0;
-    this.discount = Number(this.container.dataset.discount) || 0;
+
+    this.changeEvent = new Event("change");
 
     this.init();
   }
@@ -468,12 +458,7 @@ export class CartItem {
   updateValue() {
     this.valueInput.value = this.counter.toString();
     this.countContainer.innerText = this.counter.toString();
-    this.priceContainer.innerText = this.price * this.counter + this.prefix;
-    if (this.lastPriceContainer) {
-      this.lastPriceContainer.innerText =
-        (this.price + this.price * (this.discount / 100)) * this.counter +
-        this.prefix;
-    }
+    this.valueInput.dispatchEvent(this.changeEvent);
   }
 }
 

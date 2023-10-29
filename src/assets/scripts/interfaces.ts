@@ -19,6 +19,7 @@ export interface ICartItem {
   name: string;
   image: string;
   price: number;
-  discount?: number;
+  lastPrice?: string;
+  discount?: string;
   favorite?: boolean;
 }

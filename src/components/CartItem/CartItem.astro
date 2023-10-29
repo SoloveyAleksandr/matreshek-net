@@ -9,12 +9,7 @@ interface Props {
 const { item } = Astro.props;
 ---
 
-<div
-  class="cart-item"
-  data-price={item.price}
-  data-discount={item.discount || 0}
-  data-prefix="₽"
->
+<div class="cart-item">
   <div class="cart-item__img">
     <img src={item.image} alt="" />
   </div>
@@ -50,12 +45,14 @@ const { item } = Astro.props;
   </div>
 
   <div class="cart-item-price">
-    <span class="cart-item-price__current"></span>
+    <span class="cart-item-price__current" data-prefix="₽">{item.price}</span>
     {
       item.discount && (
         <>
-          <span class="cart-item-price__discount">-10%</span>
-          <span class="cart-item-price__last" />
+          <span class="cart-item-price__discount">{item.discount}</span>
+          <span class="cart-item-price__last" data-prefix="₽">
+            {item.lastPrice}
+          </span>
         </>
       )
     }

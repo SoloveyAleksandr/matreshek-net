@@ -17,14 +17,7 @@ export const initCartItems = () => {
     );
 
     if (minusBtn && plusBtn && countContainer && priceContainer && valueInput) {
-      new CartItem(
-        container,
-        minusBtn,
-        plusBtn,
-        countContainer,
-        priceContainer,
-        valueInput,
-      );
+      new CartItem(container, minusBtn, plusBtn, countContainer, valueInput);
     }
   });
 };

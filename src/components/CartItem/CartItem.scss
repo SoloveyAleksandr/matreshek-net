@@ -6,22 +6,49 @@
   grid-template-columns: 20.4rem 47.8rem 1fr 1fr;
   gap: 3.2rem;
 
+  @include breakpoint($xs-bp) {
+    grid-template-columns: 6.6rem 1fr 5.8rem;
+    grid-template-rows: auto 1fr;
+    padding: 0rem 0rem 0rem 1.4rem;
+    column-gap: 1.8rem;
+    row-gap: 0.8rem;
+  }
+
   &:first-child {
     border-radius: 0.8rem 0.8rem 0 0;
+
+    @include breakpoint($xs-bp) {
+      border-radius: 0.8rem;
+    }
   }
 
   &:last-child {
     border-radius: 0 0 0.8rem 0.8rem;
+
+    @include breakpoint($xs-bp) {
+      border-radius: 0.8rem;
+    }
   }
 
   &:not(:last-child) {
     border-bottom: none;
+
+    @include breakpoint($xs-bp) {
+      border: 0.2rem solid $light-3;
+    }
   }
 
   &__img {
     height: 20.4rem;
     width: 100%;
     padding: 1.7rem;
+
+    @include breakpoint($xs-bp) {
+      height: 6.8rem;
+      padding: 0.3rem;
+      grid-area: 1/1/3/2;
+      margin-top: 1.4rem;
+    }
 
     img {
       object-fit: contain;
@@ -39,6 +66,12 @@
     gap: 2rem;
     justify-content: space-between;
     width: 100%;
+
+    @include breakpoint($xs-bp) {
+      gap: 1.6rem;
+      grid-area: 2/2/3/3;
+      padding-bottom: 2rem;
+    }
   }
 
   &__btns {
@@ -54,6 +87,11 @@
     transition: 0.3s;
     @include hover {
       color: $accent;
+    }
+
+    @include breakpoint($xs-bp) {
+      width: 2rem;
+      height: 2rem;
     }
 
     &.active {
@@ -77,6 +115,10 @@
     color: #28313d;
     font-size: 2.4rem;
     line-height: 140%;
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.4rem;
+    }
   }
 
   &-counter {
@@ -85,8 +127,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.2rem;
+
+    @include breakpoint($xs-bp) {
+      grid-area: 1/3/3/4;
+      width: 100%;
+      border-left: 0.2rem solid $light-3;
+      padding: 0.9rem 0;
+    }
 
     &__input {
       display: none;
@@ -95,6 +144,12 @@
     &__inner {
       display: flex;
       align-items: center;
+
+      @include breakpoint($xs-bp) {
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
 
     &__btn {
@@ -105,6 +160,14 @@
       transition: 0.3s;
       @include hover {
         color: $accent;
+      }
+
+      @include breakpoint($xs-bp) {
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 0.6rem;
+        background-color: #f9fafb;
+        border-radius: 0.4rem;
       }
 
       svg {
@@ -124,6 +187,10 @@
       color: $gray-2;
       font-size: 1.8rem;
 
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+
       &::after {
         content: attr(data-prefix);
       }
@@ -137,14 +204,36 @@
     align-items: flex-start;
     gap: 1.2rem;
 
+    @include breakpoint($xs-bp) {
+      grid-area: 1/2/2/3;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: flex-start;
+      margin-top: 1.4rem;
+    }
+
     &__current {
       font-size: 2.4rem;
       font-weight: 600;
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+      }
+
+      &::after {
+        content: attr(data-prefix);
+      }
     }
 
     &__discount {
       color: $green;
       font-size: 1.8rem;
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+      }
     }
 
     &__last {
@@ -152,6 +241,14 @@
       font-size: 1.8rem;
       text-decoration: line-through;
       text-decoration-line: strikethrough;
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+      }
+
+      &::after {
+        content: attr(data-prefix);
+      }
     }
   }
 }
