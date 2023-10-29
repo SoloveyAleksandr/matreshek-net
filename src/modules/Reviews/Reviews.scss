@@ -6,6 +6,12 @@
   justify-content: space-between;
   gap: 8.9rem;
 
+  @include breakpoint($xs-bp) {
+    flex-direction: column-reverse;
+    gap: 3.2rem;
+    width: calc(100dvw - 3.2rem);
+  }
+
   &-rate {
     flex: none;
     height: auto;
@@ -26,6 +32,14 @@
       border-radius: 1.2rem;
       background: $white;
       box-shadow: 0 0.4rem 7rem 0 rgba(0, 0, 0, 0.07);
+
+      @include breakpoint($xs-bp) {
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        gap: 1.6rem;
+      }
     }
 
     &__info {
@@ -47,11 +61,20 @@
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+
+    @include breakpoint($xs-bp) {
+      width: 100%;
+      gap: 3.2rem;
+    }
   }
 
   &__title {
     font-size: 3.4rem;
     font-weight: 500;
+
+    @include breakpoint($xs-bp) {
+      display: none;
+    }
   }
 
   &__list {
@@ -61,12 +84,23 @@
     display: flex;
     flex-direction: column;
     gap: 4.8rem;
+
+    @include breakpoint($xs-bp) {
+      padding: 0;
+      border-radius: 0;
+      width: 100%;
+      border: none;
+    }
   }
 
   &-item {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+
+    @include breakpoint($xs-bp) {
+      gap: 1.6rem;
+    }
 
     &-user {
       display: flex;
@@ -116,6 +150,10 @@
       flex-direction: column;
       gap: 4rem;
 
+      @include breakpoint($xs-bp) {
+        gap: 2.8rem;
+      }
+
       &__container {
         display: flex;
         flex-direction: column;
@@ -126,6 +164,10 @@
         color: #343a44;
         font-size: 1.6rem;
         line-height: 150%;
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+        }
       }
 
       &__img {
@@ -157,6 +199,11 @@
       .reviews-item {
         padding-left: 2.4rem;
         border-left: 0.1rem solid $light-3;
+
+        @include breakpoint($xs-bp) {
+          padding-left: 1rem;
+          gap: 1.2rem;
+        }
       }
     }
   }
@@ -171,6 +218,11 @@
   padding: 4.8rem 3.8rem;
   border: 0.2rem solid $light-3;
   border-radius: 1.2rem;
+
+  @include breakpoint($xs-bp) {
+    padding: 2.4rem 1.4rem;
+    gap: 2.4rem;
+  }
 
   &-rate {
     display: flex;
@@ -233,10 +285,21 @@
     display: flex;
     align-items: flex-end;
     gap: 1.6rem;
+
+    @include breakpoint($xs-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+    }
   }
 
   &__btn {
     width: fit-content;
     min-width: 28.6rem;
+
+    @include breakpoint($xs-bp) {
+      min-width: unset;
+      width: 100%;
+    }
   }
 }

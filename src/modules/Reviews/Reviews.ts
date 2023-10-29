@@ -15,27 +15,36 @@ function initRatePin() {
     document.querySelector<HTMLElement>(".reviews-rate__pin");
 
   if (reviewsRate && reviewsRatePin && reviewsRateContainer) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: reviewsRate,
-        start: "top top",
-        end: `${
-          100 -
-          reviewsRateContainer.offsetHeight / (reviewsRate.offsetHeight / 100)
-        }% top`,
-        scrub: true,
-      },
-    });
-    tl.to(reviewsRatePin, {
-      flex: 1,
-      ease: "none",
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 601px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: reviewsRate,
+          start: "top top",
+          end: `${
+            100 -
+            reviewsRateContainer.offsetHeight / (reviewsRate.offsetHeight / 100)
+          }% top`,
+          scrub: true,
+        },
+      });
+      tl.to(reviewsRatePin, {
+        flex: 1,
+        ease: "none",
+      });
+
+      return () => {
+        // optional
+        // custom cleanup code here (runs when it STOPS matching)
+      };
     });
 
-    window.addEventListener("resize", () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.update();
-      }
-    });
+    // window.addEventListener("resize", () => {
+    //   if (tl.scrollTrigger) {
+    //     tl.scrollTrigger.update();
+    //   }
+    // });
   }
 }
 

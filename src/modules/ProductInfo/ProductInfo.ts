@@ -14,8 +14,13 @@ export const initProductInfo = () => {
     const swiper = new Swiper(swiperContainer, {
       autoHeight: true,
       speed: 800,
-      spaceBetween: 50,
+      spaceBetween: 0,
       allowTouchMove: false,
+      breakpoints: {
+        601: {
+          spaceBetween: 50,
+        },
+      },
     });
 
     const btnsFragment = document.createDocumentFragment();
