@@ -2,13 +2,36 @@
   overflow: hidden;
   margin-bottom: 6.4rem;
 
+  @include breakpoint($xs-bp) {
+    margin-bottom: 2.4rem;
+  }
+
+  &__container {
+    .swiper-btns {
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+    }
+  }
+
   &__swiper {
     width: calc(100% + 2.4rem);
     margin-right: 2.4rem;
 
+    @include breakpoint($xs-bp) {
+      width: calc(100% + 3.2rem);
+      margin: 0rem -1.6rem;
+      padding: 0rem 1.6rem;
+    }
+
     .swiper-slide {
       padding-right: 2.4rem;
       user-select: none;
+
+      @include breakpoint($xs-bp) {
+        padding-right: 1.2rem;
+        width: fit-content;
+      }
     }
   }
 
@@ -19,6 +42,10 @@
     position: relative;
     border-radius: 0.8rem;
     overflow: hidden;
+
+    @include breakpoint($xs-bp) {
+      width: 27.5rem;
+    }
 
     img {
       position: absolute;

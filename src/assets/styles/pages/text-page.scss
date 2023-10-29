@@ -5,11 +5,20 @@
     margin-bottom: 6.4rem;
   }
 
+  @include breakpoint($xs-bp) {
+    margin-bottom: 3.2rem;
+  }
+
   &__title {
     margin-bottom: 6.4rem;
 
     @include breakpoint($sm-bp) {
       margin-bottom: 4rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      margin-bottom: 2.4rem;
+      font-size: 2.8rem;
     }
   }
 
@@ -21,6 +30,10 @@
     @include breakpoint($sm-bp) {
       gap: 6.4rem;
     }
+
+    @include breakpoint($xs-bp) {
+      gap: 4rem;
+    }
   }
 
   &__img-block {
@@ -31,6 +44,10 @@
     @include breakpoint($sm-bp) {
       flex-direction: column-reverse;
       gap: 4rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 2.4rem;
     }
   }
 
@@ -46,6 +63,11 @@
     @include breakpoint($sm-bp) {
       width: 60rem;
       height: calc(60rem * 1.03);
+    }
+
+    @include breakpoint($xs-bp) {
+      width: 100%;
+      height: calc((100dvw - 3.2rem) * 1.03);
     }
 
     img {
@@ -65,6 +87,10 @@
     flex-direction: column;
     gap: 6.4rem;
 
+    @include breakpoint($xs-bp) {
+      gap: 2.4rem;
+    }
+
     h1,
     h2,
     h3,
@@ -73,6 +99,10 @@
     h6 {
       &:not(:last-child) {
         margin-bottom: 2.4rem;
+
+        @include breakpoint($xs-bp) {
+          margin-bottom: 1.2rem;
+        }
       }
     }
 
@@ -82,6 +112,10 @@
       gap: 1.2rem;
       list-style: disc;
       padding-left: 1.2em;
+
+      @include breakpoint($xs-bp) {
+        gap: 0.8rem;
+      }
     }
 
     ol {
@@ -90,6 +124,10 @@
       gap: 1.2rem;
       list-style: decimal;
       padding-left: 1.2em;
+
+      @include breakpoint($xs-bp) {
+        gap: 0.8rem;
+      }
     }
   }
 
@@ -99,6 +137,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.4rem;
+    }
   }
 
   &-table {
@@ -107,6 +149,7 @@
     padding-bottom: 1rem;
     &::-webkit-scrollbar {
       width: 0.4rem;
+      height: 0.4rem;
     }
     &::-webkit-scrollbar-track {
       background: $white;
@@ -114,6 +157,12 @@
     &::-webkit-scrollbar-thumb {
       background-color: $light-3;
       border-radius: 0.4rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      width: calc(100% + 3.2rem);
+      margin: 0rem -1.6rem;
+      padding: 0rem 1.6rem;
     }
 
     &__container {
@@ -133,12 +182,20 @@
       border-collapse: separate;
       overflow: hidden;
 
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+      }
+
       thead {
         background-color: #f9fafb;
         color: #6b7280;
 
         th {
           padding: 2.9rem 2rem;
+
+          @include breakpoint($xs-bp) {
+            padding: 1.8rem 2rem;
+          }
         }
       }
 

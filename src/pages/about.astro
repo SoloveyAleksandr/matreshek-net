@@ -22,16 +22,24 @@ import NavBar from "../modules/NavBar/NavBar.astro";
         <h1 class="about__title">
           Рады приветствовать вас на сайте компании Matreshek Net!
         </h1>
-        <div class="about__links">
-          <DefaultBtn as="a" href="#" size="sm" color="white">
-            Наши реквизиты
-          </DefaultBtn>
-          <DefaultBtn as="a" href="#" size="sm" color="white">
-            Лицензии
-          </DefaultBtn>
-          <DefaultBtn as="a" href="#" size="sm" color="white">
-            Контакты
-          </DefaultBtn>
+        <div class="swiper about__links">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <DefaultBtn as="a" href="#" size="sm" color="white">
+                Наши реквизиты
+              </DefaultBtn>
+            </div>
+            <div class="swiper-slide">
+              <DefaultBtn as="a" href="#" size="sm" color="white">
+                Лицензии
+              </DefaultBtn>
+            </div>
+            <div class="swiper-slide">
+              <DefaultBtn as="a" href="#" size="sm" color="white">
+                Контакты
+              </DefaultBtn>
+            </div>
+          </div>
         </div>
       </div>
     </div>

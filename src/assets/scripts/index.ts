@@ -31,6 +31,7 @@ import { initContactsSlider } from "../../modules/ContactsSlider/ContactsSlider"
 import { initNavBar } from "../../modules/NavBar/NavBar";
 import { initCartItems } from "../../components/CartItem/CartItem";
 import { initOrderType } from "./pages/order";
+import { initAboutLinks } from "./pages/about";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,6 +75,8 @@ initRewiews();
 initFileInputs();
 
 initAboutSlider();
+
+initAboutLinks();
 
 initContactsSlider();
 

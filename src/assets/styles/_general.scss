@@ -61,6 +61,10 @@ h2 {
 h3 {
   font-size: 2.4rem;
   font-weight: 500;
+
+  @include breakpoint($xs-bp) {
+    font-size: 2rem;
+  }
 }
 h4 {
   font-size: 2.2rem;
@@ -127,6 +131,10 @@ svg[astro-icon="fi_heart"] {
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.8rem;
+      }
     }
   }
 
