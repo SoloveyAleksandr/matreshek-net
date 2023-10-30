@@ -44,3 +44,23 @@
     opacity: 0.6;
   }
 }
+
+@mixin customScroll {
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.8rem;
+
+    @include breakpoint($xs-bp) {
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $light-4; /* цвет плашки */
+    border-radius: 1rem; /* закругления плашки */
+    border: none; /* padding вокруг плашки */
+  }
+}
