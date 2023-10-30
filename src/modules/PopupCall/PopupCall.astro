@@ -1,0 +1,22 @@
+---
+import DefaultInput from "../../components/DefaultInput/DefaultInput.astro";
+import Popup from "../Popup/Popup.astro";
+---
+
+<Popup className="popup-call">
+  <form action="#" class="popup__form">
+    <div class="popup__head">
+      <span class="popup__title">Задать вопрос</span>
+      <p class="popup__text">
+        Менеджеры нашей компании с радостью ответят на ваши вопросы
+      </p>
+    </div>
+
+    <div class="popup__inner">
+      <DefaultInput label="Имя" placeholder="Иван" required />
+      <DefaultInput label="Телефон" placeholder="+7 995 455 34 55" required />
+      <DefaultInput label="E-mail" placeholder="podarki@mail.ru" />
+      <DefaultInput as="textarea" label="Сообщение" />
+    </div>
+  </form>
+</Popup>

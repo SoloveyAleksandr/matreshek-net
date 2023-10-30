@@ -3,6 +3,7 @@ import { Sprite } from "astro-icon";
 import "../assets/styles/style.scss";
 import UpBtn from "../components/UpBtn/UpBtn.astro";
 import Menu from "../modules/Menu/Menu.astro";
+import PopupCall from "../modules/PopupCall/PopupCall.astro";
 
 interface Props {
   title?: string;
@@ -37,6 +38,9 @@ const { title = "заголовок страницы", nav = true } = Astro.prop
         <slot />
         <Menu />
       </main>
+
+      <PopupCall />
+
       <UpBtn />
     </Sprite.Provider>
   </body>
