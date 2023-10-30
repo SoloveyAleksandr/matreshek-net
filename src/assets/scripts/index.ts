@@ -32,6 +32,7 @@ import { initNavBar } from "../../modules/NavBar/NavBar";
 import { initCartItems } from "../../components/CartItem/CartItem";
 import { initOrderType } from "./pages/order";
 import { initAboutLinks } from "./pages/about";
+import { initHeader } from "../../modules/Header/Header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,6 +52,8 @@ Fancybox.bind("[data-fancybox]", {});
 
 const dropDownBtns = document.querySelectorAll<HTMLElement>("[data-dropdown]");
 dropDownBtns.forEach((container) => new Dropdown(container));
+
+initHeader();
 
 mainBannerScript();
 

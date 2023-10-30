@@ -462,6 +462,33 @@ export class CartItem {
   }
 }
 
+export class Menu {
+  container: HTMLElement | null;
+  closeBtn: HTMLElement | null;
+
+  constructor(container: HTMLElement | null) {
+    this.container = container;
+
+    if (this.container) {
+      this.closeBtn = this.container.querySelector<HTMLElement>(".menu__btn");
+    } else {
+      this.closeBtn = null;
+    }
+
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener("click", this.close.bind(this));
+    }
+  }
+
+  open() {
+    if (this.container) this.container.classList.add("_active");
+  }
+
+  close() {
+    if (this.container) this.container.classList.remove("_active");
+  }
+}
+
 export const initFilterSwiper = () => {
   const containers = document.querySelectorAll<HTMLElement>(".swiper.filter");
 
