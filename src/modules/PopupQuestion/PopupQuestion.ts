@@ -1,9 +1,11 @@
 import { Popup } from "../../assets/scripts/utils";
 
-const popupContainer = document.querySelector<HTMLElement>("[data-call-popup]");
-const popupBtns = document.querySelectorAll<HTMLElement>("[data-call-btn]");
+const popupContainer = document.querySelector<HTMLElement>(
+  "[data-question-popup]",
+);
+const popupBtns = document.querySelectorAll<HTMLElement>("[data-question-btn]");
 
-export const initPopupCall = () => {
+export const initPopupQuestion = () => {
   if (popupContainer) {
     const popup = new Popup(popupContainer);
 

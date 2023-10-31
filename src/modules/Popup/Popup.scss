@@ -1,25 +1,162 @@
-.popupt {
+.popup {
   position: fixed;
   z-index: 5000;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: rgba(18, 19, 21, 0);
+  transition: 0.5s;
 
-  &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  &._active {
+    pointer-events: all;
     background-color: rgba(18, 19, 21, 0.5);
+
+    .popup {
+      &__container {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &._sended {
+    .popup-send {
+      display: flex;
+    }
+
+    .popup__form {
+      display: none;
+    }
   }
 
   &__wrapper {
     position: relative;
     width: 100%;
     height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: auto;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 57.5rem;
+    padding: 4rem;
+    background-color: $white;
+    border-radius: 1.2rem;
+    position: relative;
+    transform: translateY(6rem);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: 0.3s;
+    @include hover {
+      color: $accent;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4.4rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3.2rem;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: 500;
+  }
+
+  &__text {
+    color: $gray-2;
+    font-size: 1.8rem;
+  }
+
+  &__legal {
+    color: $gray-2;
+    font-size: 1.6rem;
+
+    a {
+      color: $accent;
+      transition: 0.3s;
+      @include hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &-send {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+
+    &__icon {
+      width: 10rem;
+      height: 10rem;
+      padding: 2.6rem;
+      border: 0.2rem solid $accent;
+      border-radius: 50%;
+      color: $accent;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .popup {
+      &__title {
+        font-size: 3.2rem;
+        font-weight: 400;
+        margin-bottom: 1.6rem;
+      }
+
+      &__text {
+        margin-bottom: 4.2rem;
+      }
+    }
+
+    .default-btn {
+      width: 100%;
+    }
   }
 }
-
-@import "../PopupCall/PopupCall.scss";

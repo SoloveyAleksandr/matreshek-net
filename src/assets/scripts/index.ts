@@ -33,6 +33,8 @@ import { initCartItems } from "../../components/CartItem/CartItem";
 import { initOrderType } from "./pages/order";
 import { initAboutLinks } from "./pages/about";
 import { initHeader } from "../../modules/Header/Header";
+import { initPopupCall } from "../../modules/PopupCall/PopupCall";
+import { initPopupQuestion } from "../../modules/PopupQuestion/PopupQuestion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,6 +90,9 @@ initCartItems();
 initOrderType();
 
 const navBarController = initNavBar();
+
+initPopupCall();
+initPopupQuestion();
 
 initUpBtn();
 

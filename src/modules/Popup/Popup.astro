@@ -5,17 +5,15 @@ interface Props {
   className?: string;
 }
 
-const { className } = Astro.props;
+const { className, ...rest } = Astro.props;
 ---
 
-<div class:list={["popup", className]}>
-  <div class="popup__bg"></div>
+<div class:list={["popup", className]} {...rest}>
   <div class="popup__wrapper">
     <div class="popup__container">
-      <button type="button" class="popup__close">
+      <button type="button" class="popup__close" data-close-btn>
         <Sprite name="fi_x" />
       </button>
-
       <slot />
     </div>
   </div>

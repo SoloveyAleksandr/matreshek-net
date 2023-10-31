@@ -499,3 +499,26 @@ export const initFilterSwiper = () => {
     });
   });
 };
+
+export class Popup {
+  container: HTMLElement;
+  closeBtns: NodeListOf<HTMLElement>;
+
+  constructor(container: HTMLElement) {
+    this.container = container;
+    this.closeBtns =
+      this.container.querySelectorAll<HTMLElement>("[data-close-btn]");
+
+    this.closeBtns.forEach((btn) => {
+      btn.addEventListener("click", this.close.bind(this));
+    });
+  }
+
+  open() {
+    this.container.classList.add("_active");
+  }
+
+  close() {
+    this.container.classList.remove("_active");
+  }
+}
