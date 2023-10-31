@@ -6,7 +6,7 @@ import Popup from "../Popup/Popup.astro";
 ---
 
 <Popup data-call-popup>
-  <form action="#" class="popup__form">
+  <form action="#" class="popup__form" data-submit-handler>
     <div class="popup__head">
       <span class="popup__title">Обратный звонок</span>
       <p class="popup__text">Представьтесь, мы вам перезвоним</p>
@@ -33,6 +33,6 @@ import Popup from "../Popup/Popup.astro";
     <span class="popup__text"
       >Наш менеджер перезвонит вам в ближайшее время</span
     >
-    <DefaultBtn type="button">Закрыть</DefaultBtn>
+    <DefaultBtn type="button" data-close-btn>Закрыть</DefaultBtn>
   </div>
 </Popup>

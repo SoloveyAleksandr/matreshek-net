@@ -18,7 +18,7 @@ import { initRangeSliders } from "../../components/RangeSlider/RangeSlider";
 import { initAdvSlider } from "../../modules/AdvSlider/AdvSlider";
 import { initProductHead } from "../../modules/ProductHead/ProductHead";
 import { initFilterSwiper } from "./utils";
-import { Dropdown } from "./Dropdown";
+import { Dropdown } from "./utils";
 import { initProductInfo } from "../../modules/ProductInfo/ProductInfo";
 import { Fancybox } from "@fancyapps/ui";
 import { gsap } from "gsap";
@@ -102,6 +102,22 @@ if (headerCatalogBtn) {
     navCatalogController.openMenu(),
   );
 }
+
+const submitHandlers = document.querySelectorAll<HTMLElement>(
+  "[data-submit-handler]",
+);
+submitHandlers.forEach((item) => {
+  const closestPopup = item.closest(".popup");
+
+  item.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (closestPopup) {
+      closestPopup.classList.add("_sended");
+    }
+    item.classList.add("_sended");
+  });
+});
 
 {
   let id = 0;

@@ -110,6 +110,10 @@ svg[astro-icon="fi_heart"] {
   }
 }
 
+._hidden {
+  overflow: hidden;
+}
+
 .gray {
   color: $gray-1;
 }
